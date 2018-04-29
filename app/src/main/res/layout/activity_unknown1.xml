@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pijus.chemijosprojektas.MainActivity"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/ivestisu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:text="iveskite kieki" />
+
+    <TextView
+        android:id="@+id/rezultatasu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/rezultatasu2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/rezultatasu3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="" />
+    <Button
+        android:id="@+id/skaiciuotiu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="skaiciuoti" />
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pijus.chemijosprojektas.MainActivity"
+    android:weightSum="1">
+
+
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- android:layout_width="match_parent"
+    android:layout_height="wrap_content"-->
+        <CheckBox
+            android:id="@+id/CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija"
+            android:text="Vonios zele" />
+
+        <CheckBox
+            android:id="@+id/CheckBox2"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija2"
+            android:text="Valomoji veido kauke" />
+
+        <CheckBox
+            android:id="@+id/CheckBox3"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija3"
+            android:text="Unknown" />
+
+        <CheckBox
+            android:id="@+id/CheckBox4"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija4"
+            android:text="Lupu balzamas" />
+
+        <CheckBox
+            android:id="@+id/CheckBox5"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija5"
+            android:text="Losjonas su alavijais" />
+
+        <CheckBox
+            android:id="@+id/CheckBox6"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija6"
+            android:text="Dezodorantas" />
+
+        <CheckBox
+            android:id="@+id/CheckBox7"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija7"
+            android:text="Dantu pasta" />
+
+        <CheckBox
+            android:id="@+id/CheckBox8"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija8"
+            android:text="Balinamoji dantu pasta" />
+
+        <CheckBox
+            android:id="@+id/CheckBox9"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:onClick="funkcija9"
+            android:text="Aviziniu dribsniu sveitiklis" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/round"
+            android:text="kiek reikia"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="334dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/round"
+            android:text="kiek iseis"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="177dp"
+            tools:layout_editor_absoluteY="334dp" />
+    </LinearLayout>
+</LinearLayout>
