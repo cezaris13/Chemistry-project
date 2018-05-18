@@ -12,10 +12,14 @@ public class losjonas2 extends AppCompatActivity {
     EditText pirmasvonia;
     EditText antrasvonia;
     EditText treciasvonia;
+    EditText ketvirtasvonia;
+    EditText penktasvonia;
     TextView atsakymas;
-    double zelle=12;
-    double vanduoo=12;
-    double sampunass=1.4;
+    double aliejus=22;
+    double vaskas=12;
+    double lasas=1;
+    double alavijo=5;
+    double E=1;
     int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +29,17 @@ public class losjonas2 extends AppCompatActivity {
         pirmasvonia=(EditText)findViewById(R.id.ivestisl1);
         antrasvonia=(EditText)findViewById(R.id.ivestisl2);
         treciasvonia=(EditText)findViewById(R.id.ivestisl3);
+        ketvirtasvonia=(EditText)findViewById(R.id.ivestisl4);
+        penktasvonia=(EditText)findViewById(R.id.ivestisl5);
         atsakymas=(TextView)findViewById(R.id.textViewl2);
         voniaskaiciuoti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int vanduo1=Integer.decode(pirmasvonia.getText().toString());
                 int vanduo2=Integer.decode(antrasvonia.getText().toString());
+                double vanduo4=Double.parseDouble(ketvirtasvonia.getText().toString());
                 double vanduo3=Double.parseDouble(treciasvonia.getText().toString());
+                double vanduo5=Double.parseDouble(penktasvonia.getText().toString());
                 double min=100000;
 
                 if(min>vanduo1){
@@ -48,14 +56,29 @@ public class losjonas2 extends AppCompatActivity {
                     min=vanduo3;
                     klintas=3;
                 }
+                if(min>vanduo4){
+                    min=vanduo4;
+                    klintas=4;
+
+                }
+                if(min>vanduo5){
+                    min=vanduo5;
+                    klintas=5;
+                }
                 if(klintas==1){
-                    atsakymas.setText(String.valueOf(min/zelle)+"porciju");
+                    atsakymas.setText(String.valueOf(min/aliejus)+"porciju");
                 }
                 if(klintas==2){
-                    atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
+                    atsakymas.setText(String.valueOf(min/vaskas)+"porciju");
                 }
                 if(klintas==3){
-                    atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
+                    atsakymas.setText(String.valueOf(min/lasas)+"porciju");
+                }
+                if(klintas==4){
+                    atsakymas.setText(String.valueOf(min/alavijo)+"porciju");
+                }
+                if(klintas==5){
+                    atsakymas.setText(String.valueOf(min/E)+"porciju");
                 }
             }
         });

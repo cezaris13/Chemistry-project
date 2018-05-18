@@ -32,23 +32,23 @@ public class vonioszele1 extends AppCompatActivity {
         rezultatas=(TextView)findViewById(R.id.rezultatas);
         rezultatas2=(TextView)findViewById(R.id.rezultatas2);
         rezultatas3=(TextView)findViewById(R.id.rezultatas3);
-       // string ivedimas=ivestis.getText().toString();
+       final String ivedimas=ivestis.getText().toString();
                 skaiciuoti.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             public void onClick(View v) {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
-                }
-                else if(ivedimas==""){
-                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-              //  else{
+                 if(ivedimas.matches("")){
+                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }
+                else{
                     int data=Integer.decode(ivestis.getText().toString());
                     rezultatas.setText(String.valueOf(data*vanduo)+"ml vandens");
                     rezultatas2.setText(String.valueOf(data*sampunas)+"ml sampuno");
                     rezultatas3.setText(String.valueOf(data*zelatina)+"g zelatinos");
 
-               // }
+                }
             }
         });
     }

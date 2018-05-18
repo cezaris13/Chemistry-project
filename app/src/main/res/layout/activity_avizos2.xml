@@ -12,7 +12,8 @@
         android:id="@+id/ivestisa1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:hint="iveskite avizu kieki"/>
 
     <EditText
         android:id="@+id/ivestisa2"

@@ -26,6 +26,18 @@
         android:layout_height="wrap_content"
         android:inputType="phone" />
 
+
+    <EditText
+        android:id="@+id/ivestisl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/ivestisl5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
     <TextView
         android:id="@+id/textViewl2"
         android:layout_width="match_parent"
@@ -34,7 +46,6 @@
         android:textSize="20dp"
         android:textStyle="bold"
         />
-
     <Button
         android:id="@+id/buttonl3"
         android:layout_width="match_parent"

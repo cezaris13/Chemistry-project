@@ -15,9 +15,9 @@ public class avizos1 extends AppCompatActivity {
     TextView rezultatasaa;
     TextView rezultatasaa2;
     TextView rezultatasaa3;
-    double vanduo=12;
-    double sampunas=12;
-    double zelatina=1.4;
+    double dribsniai=6;
+    double miltai=5;
+    double vendens=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +28,23 @@ public class avizos1 extends AppCompatActivity {
         rezultatasaa=(TextView)findViewById(R.id.rezultatasa);
         rezultatasaa2=(TextView)findViewById(R.id.rezultatasa2);
         rezultatasaa3=(TextView)findViewById(R.id.rezultatasa3);
-        // string ivedimas=ivestisa.getText().toString();
+       final String ivedimas=ivestisa.getText().toString();
         skaiciuotia.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             public void onClick(View v) {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
-                }
-                else if(ivedimas==""){
-                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                //  else{
+                 if(ivedimas.matches("")){
+                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }
+                  else{
                 int data=Integer.decode(ivestisa.getText().toString());
-                rezultatasaa.setText(String.valueOf(data*vanduo)+"ml vandens");
-                rezultatasaa2.setText(String.valueOf(data*sampunas)+"ml sampuno");
-                rezultatasaa3.setText(String.valueOf(data*zelatina)+"g zelatinos");
+                rezultatasaa.setText(String.valueOf(data*dribsniai)+"g aviziniu dribsniu");
+                rezultatasaa2.setText(String.valueOf(data*miltai)+"g kepimo milteliu");
+                rezultatasaa3.setText(String.valueOf(data*vendens)+"ml vandens");
 
-                // }
+                 }
             }
         });
     }

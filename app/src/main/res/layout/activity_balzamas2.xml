@@ -26,6 +26,12 @@
         android:layout_height="wrap_content"
         android:inputType="phone" />
 
+    <EditText
+        android:id="@+id/ivestisba4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
+
     <TextView
         android:id="@+id/textViewba2"
         android:layout_width="match_parent"

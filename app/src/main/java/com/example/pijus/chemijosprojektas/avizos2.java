@@ -13,9 +13,9 @@ public class avizos2 extends AppCompatActivity {
     EditText antrasvonia;
     EditText treciasvonia;
     TextView atsakymas;
-    double zelle=12;
-    double vanduoo=12;
-    double sampunass=1.4;
+    double dribsniai=6;
+    double miltai=5;
+    double vendens=1;
     int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class avizos2 extends AppCompatActivity {
                     klintas=3;
                 }
                 if(klintas==1){
-                    atsakymas.setText(String.valueOf(min/zelle)+"porciju");
+                    atsakymas.setText(String.valueOf(min/dribsniai )+"porciju");
                 }
                 if(klintas==2){
-                    atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
+                    atsakymas.setText(String.valueOf(min/miltai)+"porciju");
                 }
                 if(klintas==3){
-                    atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
+                    atsakymas.setText(String.valueOf(min/vendens)+"porciju");
                 }
             }
         });

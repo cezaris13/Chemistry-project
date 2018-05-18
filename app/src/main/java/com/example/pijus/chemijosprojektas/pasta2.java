@@ -13,9 +13,9 @@ public class pasta2 extends AppCompatActivity {
     EditText antrasvonia;
     EditText treciasvonia;
     TextView atsakymas;
-    double zelle=12;
-    double vanduoo=12;
-    double sampunass=1.4;
+    double milteliaii=7.5;
+    double druskaa=1;
+    double gliceroliss=1.8;
     int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class pasta2 extends AppCompatActivity {
                     klintas=3;
                 }
                 if(klintas==1){
-                    atsakymas.setText(String.valueOf(min/zelle)+"porciju");
+                    atsakymas.setText(String.valueOf(min/milteliaii)+"porciju");
                 }
                 if(klintas==2){
-                    atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
+                    atsakymas.setText(String.valueOf(min/druskaa)+"porciju");
                 }
                 if(klintas==3){
-                    atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
+                    atsakymas.setText(String.valueOf(min/gliceroliss)+"porciju");
                 }
             }
         });

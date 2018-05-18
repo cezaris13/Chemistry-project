@@ -15,9 +15,9 @@ public class kauke1 extends AppCompatActivity {
     TextView rezultataskk;
     TextView rezultataskk2;
     TextView rezultataskk3;
-    double vanduo=12;
-    double sampunas=12;
-    double zelatina=1.4;
+    double mieless=5.5;
+    double vanduoo=1;
+    double actass=1.5;
     /*
            1. 5, 5 g sausų mielių;
            2. 1,5 lašai acto;
@@ -32,23 +32,23 @@ public class kauke1 extends AppCompatActivity {
         rezultataskk=(TextView)findViewById(R.id.rezultatask);
         rezultataskk2=(TextView)findViewById(R.id.rezultatask2);
         rezultataskk3=(TextView)findViewById(R.id.rezultatask3);
-        // string ivedimas=ivestis.getText().toString();
+        final String ivedimas=ivestiskk.getText().toString();
         skaiciuotikk.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             public void onClick(View v) {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
-                }
-                else if(ivedimas==""){
-                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                //  else{
+                 if(ivedimas.matches("")){
+                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }
+                  else{
                 int data=Integer.decode(ivestiskk.getText().toString());
-                rezultataskk.setText(String.valueOf(data*vanduo)+"ml vandens");
-                rezultataskk2.setText(String.valueOf(data*sampunas)+"ml sampuno");
-                rezultataskk3.setText(String.valueOf(data*zelatina)+"g zelatinos");
+                rezultataskk.setText(String.valueOf(data*mieless)+"g mieliu");
+                rezultataskk2.setText(String.valueOf(data*vanduoo)+"sauksteliu vandens");
+                rezultataskk3.setText(String.valueOf(data*actass)+" lasu acto");
 
-                // }
+                 }
             }
         });
     }

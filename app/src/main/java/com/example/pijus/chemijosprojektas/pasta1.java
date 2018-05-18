@@ -15,9 +15,9 @@ public class pasta1 extends AppCompatActivity {
     TextView rezultataspp;
     TextView rezultataspp2;
     TextView rezultataspp3;
-    double vanduo=12;
-    double sampunas=12;
-    double zelatina=1.4;
+    double milteliai=12;
+    double druska=12;
+    double glizerolis=1.4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +28,23 @@ public class pasta1 extends AppCompatActivity {
         rezultataspp=(TextView)findViewById(R.id.rezultatasp);
         rezultataspp2=(TextView)findViewById(R.id.rezultatasp2);
         rezultataspp3=(TextView)findViewById(R.id.rezultatasp3);
-        // string ivedimas=ivestis.getText().toString();
+        final String ivedimas=ivestispp.getText().toString();
         skaiciuotipp.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             public void onClick(View v) {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
-                }
-                else if(ivedimas==""){
-                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                //  else{
+                if(ivedimas.matches("")){
+                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }
+                else{
                 int data=Integer.decode(ivestispp.getText().toString());
-                rezultataspp.setText(String.valueOf(data*vanduo)+"ml vandens");
-                rezultataspp2.setText(String.valueOf(data*sampunas)+"ml sampuno");
-                rezultataspp3.setText(String.valueOf(data*zelatina)+"g zelatinos");
+                rezultataspp.setText(String.valueOf(data*milteliai)+"g kepimo milteliu");
+                rezultataspp2.setText(String.valueOf(data*druska)+"g druskos");
+                rezultataspp3.setText(String.valueOf(data*glizerolis)+"ml glicerolio");
 
-                // }
+                 }
             }
         });
     }

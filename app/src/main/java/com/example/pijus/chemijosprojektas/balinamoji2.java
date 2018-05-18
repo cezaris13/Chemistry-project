@@ -13,9 +13,9 @@ public class balinamoji2 extends AppCompatActivity {
     EditText antrasvonia;
     EditText treciasvonia;
     TextView atsakymas;
-    double zelle=12;
-    double vanduoo=12;
-    double sampunass=1.4;
+    double ciber=1;
+    double kokos=1;
+    double eteris=2;
     int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class balinamoji2 extends AppCompatActivity {
                     klintas=3;
                 }
                 if(klintas==1){
-                    atsakymas.setText(String.valueOf(min/zelle)+"porciju");
+                    atsakymas.setText(String.valueOf(min/ciber)+"porciju");
                 }
                 if(klintas==2){
-                    atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
+                    atsakymas.setText(String.valueOf(min/kokos)+"porciju");
                 }
                 if(klintas==3){
-                    atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
+                    atsakymas.setText(String.valueOf(min/eteris)+"porciju");
                 }
             }
         });

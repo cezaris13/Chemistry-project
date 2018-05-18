@@ -15,9 +15,11 @@ public class balzamas1 extends AppCompatActivity {
     TextView rezultatasbbal;
     TextView rezultatasbbal2;
     TextView rezultatasbbal3;
-    double vanduo=12;
-    double sampunas=12;
-    double zelatina=1.4;
+    TextView rezultatasbbal4;
+    double alyvos=23;
+    double vaskas=17;
+    double medus=6;
+    double vandekas =0.05;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +30,24 @@ public class balzamas1 extends AppCompatActivity {
         rezultatasbbal=(TextView)findViewById(R.id.rezultatasbal);
         rezultatasbbal2=(TextView)findViewById(R.id.rezultatasbal2);
         rezultatasbbal3=(TextView)findViewById(R.id.rezultatasbal3);
-        // string ivedimas=ivestis.getText().toString();
+        rezultatasbbal4=(TextView)findViewById(R.id.rezultatasbal4);
+         final String ivedimasbbal=ivestisbbal.getText().toString();
         skaiciuotibbal.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             public void onClick(View v) {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
-               /* if(ivedimas=="iveskite kieki"){
-                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
-                }
-                else if(ivedimas==""){
+               /* if(ivedimasbbal=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                //  else{
+                if(ivedimasbbal.matches("")){
+                    Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }
+                  else{
                 int data=Integer.decode(ivestisbbal.getText().toString());
-                rezultatasbbal.setText(String.valueOf(data*vanduo)+"ml vandens");
-                rezultatasbbal2.setText(String.valueOf(data*sampunas)+"ml sampuno");
-                rezultatasbbal3.setText(String.valueOf(data*zelatina)+"g zelatinos");
-
-                // }
+                rezultatasbbal.setText(String.valueOf(data*alyvos)+"g alyvuogiu aliejaus");
+                rezultatasbbal2.setText(String.valueOf(data*vaskas)+"g biciu vasko");
+                rezultatasbbal3.setText(String.valueOf(data*medus)+"g zelatinos");
+                rezultatasbbal4.setText(String.valueOf(data*vandekas)+"ml vandens");
+                 }
             }
         });
     }

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:text="iveskite kieki" />
+        android:hint="iveskite kieki" />
 
     <TextView
         android:id="@+id/rezultatasbal"
@@ -27,6 +27,11 @@
         android:text="" />
     <TextView
         android:id="@+id/rezultatasbal3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/rezultatasbal4"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="" />

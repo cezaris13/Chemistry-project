@@ -13,9 +13,11 @@ public class unknown2 extends AppCompatActivity {
     EditText antrasvonia;
     EditText treciasvonia;
     TextView atsakymas;
-    double zelle=12;
-    double vanduoo=12;
-    double sampunass=1.4;
+    double mltai=15;
+    double druska=5.6;
+    double vanduoooo=8;
+
+
     int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +51,13 @@ public class unknown2 extends AppCompatActivity {
                     klintas=3;
                 }
                 if(klintas==1){
-                    atsakymas.setText(String.valueOf(min/zelle)+"porciju");
+                    atsakymas.setText(String.valueOf(min/mltai)+"porciju");
                 }
                 if(klintas==2){
-                    atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
+                    atsakymas.setText(String.valueOf(min/vanduoooo)+"porciju");
                 }
                 if(klintas==3){
-                    atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
+                    atsakymas.setText(String.valueOf(min/druska)+"porciju");
                 }
             }
         });
