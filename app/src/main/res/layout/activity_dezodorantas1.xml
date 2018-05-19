@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:hint="iveskite kieki" />
+        android:hint="Įveskite kiekį" />
 
     <TextView
         android:id="@+id/rezultatasd"
@@ -35,11 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="" />
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/receptasde"/>
     <Button
         android:id="@+id/skaiciuotid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

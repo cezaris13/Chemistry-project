@@ -6,34 +6,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    CheckBox pirmas;
-    CheckBox antras;
-    CheckBox trecias;
-    CheckBox ketvirtas;
-    CheckBox penktas;
-    CheckBox sestas;
-    CheckBox septintas;
-    CheckBox astuntas;
-    CheckBox devintas;
+    RadioButton pirmas;
+    RadioButton antras;
+    RadioButton trecias;
+    RadioButton ketvirtas;
+    RadioButton penktas;
+    RadioButton sestas;
+    RadioButton septintas;
+    RadioButton astuntas;
+    RadioButton devintas;
     int kelintaspage=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pirmas=(CheckBox)findViewById(R.id.CheckBox);
-        antras=(CheckBox)findViewById(R.id.CheckBox2);
-        trecias=(CheckBox)findViewById(R.id.CheckBox3);
-        ketvirtas=(CheckBox)findViewById(R.id.CheckBox4);
-        penktas=(CheckBox)findViewById(R.id.CheckBox5);
-        sestas=(CheckBox)findViewById(R.id.CheckBox6);
-        septintas=(CheckBox)findViewById(R.id.CheckBox7);
-        astuntas=(CheckBox)findViewById(R.id.CheckBox8);
-        devintas=(CheckBox)findViewById(R.id.CheckBox9);
+        pirmas=(RadioButton)findViewById(R.id.RadioButton);
+        antras=(RadioButton)findViewById(R.id.RadioButton2);
+        trecias=(RadioButton)findViewById(R.id.RadioButton3);
+        ketvirtas=(RadioButton)findViewById(R.id.RadioButton4);
+        penktas=(RadioButton)findViewById(R.id.RadioButton5);
+        sestas=(RadioButton)findViewById(R.id.RadioButton6);
+        septintas=(RadioButton)findViewById(R.id.RadioButton7);
+        astuntas=(RadioButton)findViewById(R.id.RadioButton8);
+        devintas=(RadioButton)findViewById(R.id.RadioButton9);
         Button button =(Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

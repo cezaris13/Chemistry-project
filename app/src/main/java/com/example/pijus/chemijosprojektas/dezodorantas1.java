@@ -16,6 +16,7 @@ public class dezodorantas1 extends AppCompatActivity {
     TextView rezultatasdd2;
     TextView rezultatasdd3;
     TextView rezultatasdd4;
+    TextView receptasdez;
     double soda=2;
     double krakmolas=2;
     double kokosai=2;
@@ -31,6 +32,7 @@ public class dezodorantas1 extends AppCompatActivity {
         rezultatasdd2=(TextView)findViewById(R.id.rezultatasd2);
         rezultatasdd3=(TextView)findViewById(R.id.rezultatasd3);
         rezultatasdd4=(TextView)findViewById(R.id.rezultatasd4);
+        receptasdez=(TextView)findViewById(R.id.receptasde);
         final String ivedimas=ivestisdd.getText().toString();
         skaiciuotidd.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -38,15 +40,21 @@ public class dezodorantas1 extends AppCompatActivity {
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                if(ivedimas.matches("")){
+              /*  if(ivedimas.matches("")){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }*/
+              if(ivestisdd.getText().toString().isEmpty()){
+                  Toast.makeText( getApplicationContext(),"Prašome įvesti kiekį",500).show();
+                  // ivestisdd.setError("Prasome ivesti kieki");
+                    return;
                 }
                   else{
                 int data=Integer.decode(ivestisdd.getText().toString());
-                rezultatasdd.setText(String.valueOf(data*soda)+"saukstai sodos");
-                rezultatasdd2.setText(String.valueOf(data*krakmolas)+"saukstai krakmolo");
-                rezultatasdd3.setText(String.valueOf(data*kokosai)+"saukstai kokosu aliejaus");
-                rezultatasdd4.setText(String.valueOf(data*eter)+"saukstai eterinio aliejaus");
+                rezultatasdd.setText(String.valueOf(data*soda)+" šaukštai sodos");
+                rezultatasdd2.setText(String.valueOf(data*krakmolas)+" šaukštai krakmolo");
+                rezultatasdd3.setText(String.valueOf(data*kokosai)+" šaukštai kokosų aliejaus");
+                rezultatasdd4.setText(String.valueOf(data*eter)+" šaukštai eterinio aliejaus");
+                receptasdez.setText("Darbo eiga: \n"+"Visas sudedamąsias dalys gerai išmaišyti, gautą masę sudėti į indą ir laikyti šaldytuve.");
                 }
             }
         });

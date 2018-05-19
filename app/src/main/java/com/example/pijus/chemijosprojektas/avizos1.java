@@ -15,6 +15,7 @@ public class avizos1 extends AppCompatActivity {
     TextView rezultatasaa;
     TextView rezultatasaa2;
     TextView rezultatasaa3;
+    TextView receptasavi;
     double dribsniai=6;
     double miltai=5;
     double vendens=1;
@@ -28,6 +29,7 @@ public class avizos1 extends AppCompatActivity {
         rezultatasaa=(TextView)findViewById(R.id.rezultatasa);
         rezultatasaa2=(TextView)findViewById(R.id.rezultatasa2);
         rezultatasaa3=(TextView)findViewById(R.id.rezultatasa3);
+        receptasavi=(TextView)findViewById(R.id.receptasav);
        final String ivedimas=ivestisa.getText().toString();
         skaiciuotia.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -35,15 +37,25 @@ public class avizos1 extends AppCompatActivity {
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                 if(ivedimas.matches("")){
+               /*  if(ivedimas.matches("")){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }*/
+               if(ivestisa.getText().toString().isEmpty()){
+                   Toast.makeText( getApplicationContext(),"Prašome įvesti kiekį",500).show();
+                   // ivestisa.setError("Prasome ivesti kieki");
+                    return;
                 }
                   else{
                 int data=Integer.decode(ivestisa.getText().toString());
-                rezultatasaa.setText(String.valueOf(data*dribsniai)+"g aviziniu dribsniu");
-                rezultatasaa2.setText(String.valueOf(data*miltai)+"g kepimo milteliu");
-                rezultatasaa3.setText(String.valueOf(data*vendens)+"ml vandens");
-
+                rezultatasaa.setText(String.valueOf(data*dribsniai)+" g avižinių dribsnių");
+                rezultatasaa2.setText(String.valueOf(data*miltai)+" g kepimo miltelių");
+                rezultatasaa3.setText(String.valueOf(data*vendens)+" ml vandens");
+                receptasavi.setText("Darbo eiga: \n" +
+                        "1.Nusivalykite veido odą. \n" +
+                        "2.Indelyje sumaišykite dribsnius su soda.\n" +
+                        "3.Įpilkite drungno vandens, kad gautumėte pastą. \n" +
+                        "4.Švelniai trinkite veidą. \n" +
+                        "5.Nusiprauskite ir nusausinkite.");
                  }
             }
         });

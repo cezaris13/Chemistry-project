@@ -15,6 +15,7 @@ public class vonioszele1 extends AppCompatActivity {
     TextView rezultatas;
     TextView rezultatas2;
     TextView rezultatas3;
+    TextView receptasvv;
     double vanduo=12;
     double sampunas=12;
     double zelatina=1.4;
@@ -32,6 +33,7 @@ public class vonioszele1 extends AppCompatActivity {
         rezultatas=(TextView)findViewById(R.id.rezultatas);
         rezultatas2=(TextView)findViewById(R.id.rezultatas2);
         rezultatas3=(TextView)findViewById(R.id.rezultatas3);
+        receptasvv=(TextView)findViewById(R.id.receptasv);
        final String ivedimas=ivestis.getText().toString();
                 skaiciuoti.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -39,15 +41,23 @@ public class vonioszele1 extends AppCompatActivity {
                /* if(ivedimas=="iveskite kieki"){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
                 }*/
-                 if(ivedimas.matches("")){
+              /*   if(ivedimas.matches("")){
                     Toast.makeText( getApplicationContext(),"iveskite pasirinkta kieki",1000).show();
+                }*/if(ivestis.getText().toString().isEmpty()){
+                    Toast.makeText( getApplicationContext(),"Prašome įvesti kiekį",500).show();
+                   // ivestis.setError("Prasome ivesti kieki");
+                    return;
                 }
                 else{
                     int data=Integer.decode(ivestis.getText().toString());
-                    rezultatas.setText(String.valueOf(data*vanduo)+"ml vandens");
-                    rezultatas2.setText(String.valueOf(data*sampunas)+"ml sampuno");
-                    rezultatas3.setText(String.valueOf(data*zelatina)+"g zelatinos");
-
+                    rezultatas.setText(String.valueOf(data*vanduo)+" ml vandens");
+                    rezultatas2.setText(String.valueOf(data*sampunas)+" ml šampūno");
+                    rezultatas3.setText(String.valueOf(data*zelatina)+" g želatinos");
+                    receptasvv.setText("Darbo eiga: \n" +
+                            "1. Į užvirintą vandenį supilti želatiną ir ją ištirpinti. \n" +
+                            "2. Įmaišykite šampūną. \n" +
+                            "3. Atvėsinkite gautą masę. \n" +
+                            "4. Sustingusią masę galima naudoti prausimuisi.");
                 }
             }
         });

@@ -17,68 +17,68 @@
         android:orientation="vertical">
         <!-- android:layout_width="match_parent"
     android:layout_height="wrap_content"-->
-        <CheckBox
-            android:id="@+id/CheckBox"
+        <RadioButton
+            android:id="@+id/RadioButton"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija"
-            android:text="Vonios zele" />
+            android:text="Vonios žėlė" />
 
-        <CheckBox
-            android:id="@+id/CheckBox2"
+        <RadioButton
+            android:id="@+id/RadioButton2"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija2"
-            android:text="Valomoji veido kauke" />
+            android:text="Valomoji veido kaukė" />
 
-        <CheckBox
-            android:id="@+id/CheckBox3"
+        <RadioButton
+            android:id="@+id/RadioButton3"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija3"
             android:text="Plastilinas" />
 
-        <CheckBox
-            android:id="@+id/CheckBox4"
+        <RadioButton
+            android:id="@+id/RadioButton4"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija4"
-            android:text="Lupu balzamas" />
+            android:text="Lūpų balzamas" />
 
-        <CheckBox
-            android:id="@+id/CheckBox5"
+        <RadioButton
+            android:id="@+id/RadioButton5"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija5"
             android:text="Losjonas su alavijais" />
 
-        <CheckBox
-            android:id="@+id/CheckBox6"
+        <RadioButton
+            android:id="@+id/RadioButton6"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija6"
             android:text="Dezodorantas" />
 
-        <CheckBox
-            android:id="@+id/CheckBox7"
+        <RadioButton
+            android:id="@+id/RadioButton7"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija7"
-            android:text="Dantu pasta" />
+            android:text="Dantų pasta" />
 
-        <CheckBox
-            android:id="@+id/CheckBox8"
+        <RadioButton
+            android:id="@+id/RadioButton8"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija8"
-            android:text="Balinamoji dantu pasta" />
+            android:text="Balinamoji dantų pasta" />
 
-        <CheckBox
-            android:id="@+id/CheckBox9"
+        <RadioButton
+            android:id="@+id/RadioButton9"
             android:layout_width="match_parent"
             android:layout_height="45.7dp"
             android:onClick="funkcija9"
-            android:text="Aviziniu dribsniu sveitiklis" />
+            android:text="Avižinių dribsnių šveitiklis" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,7 +94,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="1dp"
             android:background="@drawable/round"
-            android:text="kiek reikia"
+            android:text="Kiek reikės"
             android:textColor="#ffffff"
             tools:layout_editor_absoluteX="147dp"
             tools:layout_editor_absoluteY="334dp" />
@@ -105,7 +105,7 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|center"
             android:background="@drawable/round"
-            android:text="kiek iseis"
+            android:text="kiek išeis"
             android:textColor="#ffffff"
             tools:layout_editor_absoluteX="177dp"
             tools:layout_editor_absoluteY="334dp" />

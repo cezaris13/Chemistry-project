@@ -16,6 +16,7 @@ public class balinamoji1 extends AppCompatActivity {
     TextView rezultatasbb;
     TextView rezultatasbb2;
     TextView rezultatasbb3;
+    TextView receptasbalinamoji1;
     double ciber=1;
     double kokos=1;
     double eteris=2;
@@ -29,6 +30,7 @@ public class balinamoji1 extends AppCompatActivity {
         rezultatasbb=(TextView)findViewById(R.id.rezultatasb);
         rezultatasbb2=(TextView)findViewById(R.id.rezultatasb2);
         rezultatasbb3=(TextView)findViewById(R.id.rezultatasb3);
+        receptasbalinamoji1=(TextView)findViewById(R.id.receptasbalinamoji);
        final String ivedimasbalinamoji=ivestisbb.getText().toString();
         skaiciuotibb.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -45,14 +47,17 @@ public class balinamoji1 extends AppCompatActivity {
                    ivestisbb.setError("Prasome ivest kieki");
                    return;
                }*/if(ivestisbb.getText().toString().isEmpty()){
-                    ivestisbb.setError("Prasome ivest kieki");
+                    Toast.makeText( getApplicationContext(),"Prašome įvesti kiekį",500).show();
+                    //ivestisbb.setError("Prasome ivest kieki");
                     return;
                 }
                  else  {
                 int data=Integer.decode(ivestisbb.getText().toString());
-                rezultatasbb.setText(String.valueOf(data*ciber)+"arbatiniu sauksteliu ciberzoles");
-                rezultatasbb2.setText(String.valueOf(data*kokos)+"arbatiniu sauksteliu kokosu aliejaus");
-                rezultatasbb3.setText(String.valueOf(data*eteris)+"lasu metu eterinio aliejaus");
+                rezultatasbb.setText(String.valueOf(data*ciber)+" arbatinių šaukštelių ciberžolės");
+                rezultatasbb2.setText(String.valueOf(data*kokos)+" arbatinių šaukštelių kokosų aliejaus");
+                rezultatasbb3.setText(String.valueOf(data*eteris)+" lašų metų eterinio aliejaus");
+                receptasbalinamoji1.setText("Darbo eiga: \n"+"Viską sumaišyti ir valyti dantis 2-3 kartus per dieną.\n" +
+                        "Kuo dažniau naudosite pastą, tuo greičiau pasieksite efektą.");
                 return;
                  }
             }
