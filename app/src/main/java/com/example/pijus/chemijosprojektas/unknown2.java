@@ -17,9 +17,6 @@ public class unknown2 extends AppCompatActivity {
     double mltai=15;
     double druska=5.6;
     double vanduoooo=8;
-
-
-    int klintas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,36 +34,22 @@ public class unknown2 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Prašome užpildyti visus langelius", 1000).show();
                 }
                 else {
-
-
-                    int vanduo1 = Integer.decode(pirmasvonia.getText().toString());
-                    int vanduo2 = Integer.decode(antrasvonia.getText().toString());
+                    double vanduo1 = Double.parseDouble(pirmasvonia.getText().toString());
+                    double vanduo2 = Double.parseDouble(antrasvonia.getText().toString());
                     double vanduo3 = Double.parseDouble(treciasvonia.getText().toString());
                     double min = 100000;
 
-                    if (min > vanduo1) {
-                        min = vanduo1;
-                        klintas = 1;
+                    if (min > vanduo1/mltai) {
+                        min = vanduo1/mltai;
+                    }
+                    if (min > vanduo2/vanduoooo) {
+                        min = vanduo2/vanduoooo;
+                    }
+                    if (min > vanduo3/druska) {
+                        min = vanduo3/druska;
+                    }
+                    atsakymas.setText(String.valueOf(String.format("%.2f", min)) + "porcijų");
 
-                    }
-                    if (min > vanduo2) {
-                        min = vanduo2;
-                        klintas = 2;
-
-                    }
-                    if (min > vanduo3) {
-                        min = vanduo3;
-                        klintas = 3;
-                    }
-                    if (klintas == 1) {
-                        atsakymas.setText(String.valueOf(min / mltai) + "porciju");
-                    }
-                    if (klintas == 2) {
-                        atsakymas.setText(String.valueOf(min / vanduoooo) + "porciju");
-                    }
-                    if (klintas == 3) {
-                        atsakymas.setText(String.valueOf(min / druska) + "porciju");
-                    }
                 }
             }
         });

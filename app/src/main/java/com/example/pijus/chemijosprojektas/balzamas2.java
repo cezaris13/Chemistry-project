@@ -39,42 +39,26 @@ public class balzamas2 extends AppCompatActivity {
 
                 }
                 else {
-                    int vanduo1 = Integer.decode(pirmasvonia.getText().toString());
-                    int vanduo2 = Integer.decode(antrasvonia.getText().toString());
+                    double vanduo1 = Double.parseDouble(pirmasvonia.getText().toString());
+                    double vanduo2 = Double.parseDouble(antrasvonia.getText().toString());
                     double vanduo3 = Double.parseDouble(treciasvonia.getText().toString());
                     double vanduo4 = Double.parseDouble(ketvirtasvonia.getText().toString());
                     double min = 100000;
 
-                    if (min > vanduo1) {
-                        min = vanduo1;
-                        klintas = 1;
+                    if (min > vanduo1/alyvos) {
+                        min = vanduo1/alyvos;
+                    }
+                    if (min > vanduo2/vaskas) {
+                        min = vanduo2/vaskas;
+                    }
+                    if (min > vanduo3/medus) {
+                        min = vanduo3/medus;
+                    }
+                    if (min > vanduo4/vandekas) {
+                        min = vanduo4/vandekas;
+                    }
+                    atsakymas.setText(String.valueOf(String.format("%.2f",min)) + "porcijų");
 
-                    }
-                    if (min > vanduo2) {
-                        min = vanduo2;
-                        klintas = 2;
-
-                    }
-                    if (min > vanduo3) {
-                        min = vanduo3;
-                        klintas = 3;
-                    }
-                    if (min > vanduo4) {
-                        min = vanduo4;
-                        klintas = 4;
-                    }
-                    if (klintas == 1) {
-                        atsakymas.setText(String.valueOf(min / alyvos) + "porciju");
-                    }
-                    if (klintas == 2) {
-                        atsakymas.setText(String.valueOf(min / vaskas) + "porciju");
-                    }
-                    if (klintas == 3) {
-                        atsakymas.setText(String.valueOf(min / medus) + "porciju");
-                    }
-                    if (klintas == 4) {
-                        atsakymas.setText(String.valueOf(min / vandekas) + "porciju");
-                    }
                 }
             }
         });

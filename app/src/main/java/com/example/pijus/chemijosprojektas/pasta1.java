@@ -16,9 +16,9 @@ public class pasta1 extends AppCompatActivity {
     TextView rezultataspp2;
     TextView rezultataspp3;
     TextView receptaspp;
-    double milteliai=12;
-    double druska=12;
-    double glizerolis=1.4;
+    double milteliai=7.5;
+    double druska=1;
+    double glizerolis=1.8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

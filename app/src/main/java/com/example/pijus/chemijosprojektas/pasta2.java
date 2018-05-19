@@ -16,8 +16,7 @@ public class pasta2 extends AppCompatActivity {
     TextView atsakymas;
     double milteliaii=7.5;
     double druskaa=1;
-    double gliceroliss=1.8;
-    int klintas;
+    double gliceroliss=2.8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,34 +34,22 @@ public class pasta2 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Prašome užpildyti visus langelius",1000).show();
                 }
                 else {
-                    int vanduo1 = Integer.decode(pirmasvonia.getText().toString());
-                    int vanduo2 = Integer.decode(antrasvonia.getText().toString());
+                    double vanduo1 = Double.parseDouble(pirmasvonia.getText().toString());
+                    double vanduo2 = Double.parseDouble(antrasvonia.getText().toString());
                     double vanduo3 = Double.parseDouble(treciasvonia.getText().toString());
                     double min = 100000;
 
-                    if (min > vanduo1) {
+                    if (min > vanduo1/milteliaii) {
                         min = vanduo1;
-                        klintas = 1;
-
                     }
-                    if (min > vanduo2) {
+                    if (min > vanduo2/druskaa) {
                         min = vanduo2;
-                        klintas = 2;
-
                     }
-                    if (min > vanduo3) {
+                    if (min > vanduo3/gliceroliss) {
                         min = vanduo3;
-                        klintas = 3;
                     }
-                    if (klintas == 1) {
-                        atsakymas.setText(String.valueOf(min / milteliaii) + "porciju");
-                    }
-                    if (klintas == 2) {
-                        atsakymas.setText(String.valueOf(min / druskaa) + "porciju");
-                    }
-                    if (klintas == 3) {
-                        atsakymas.setText(String.valueOf(min / gliceroliss) + "porciju");
-                    }
+                    atsakymas.setText(String.valueOf(String.format("%.2f",min)) + "porcijų");
+
                 }
             }
         });

@@ -16,8 +16,7 @@ EditText treciasvonia;
 TextView atsakymas;
 double zelle=12;
 double vanduoo=12;
-double sampunass=1.4;
-int klintas;
+double sampunass=14/10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,36 +33,22 @@ int klintas;
                 if(pirmasvonia.getText().toString().isEmpty()||antrasvonia.getText().toString().isEmpty()||treciasvonia.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(),"Prašome užpildyti visus langelius", 1000).show();
                 }
-
                 else{
-                    int vanduo1=Integer.decode(pirmasvonia.getText().toString());
-                    int vanduo2=Integer.decode(antrasvonia.getText().toString());
+                    double vanduo1=Double.parseDouble(pirmasvonia.getText().toString());
+                    double vanduo2=Double.parseDouble(antrasvonia.getText().toString());
                     double vanduo3=Double.parseDouble(treciasvonia.getText().toString());
                     double min=100000;
 
-                    if(min>vanduo1){
-                        min=vanduo1;
-                        klintas=1;
-
+                    if(min>vanduo1/zelle){
+                        min=vanduo1/zelle;
                     }
-                    if(min>vanduo2){
-                        min=vanduo2;
-                        klintas=2;
-
+                    if(min>vanduo2/sampunass){
+                        min=vanduo2/sampunass;
                     }
-                    if(min>vanduo3){
-                        min=vanduo3;
-                        klintas=3;
+                    if(min>vanduo3/vanduoo){
+                        min=vanduo3/vanduoo;
                     }
-                    if(klintas==1){
-                        atsakymas.setText(String.valueOf(min/zelle)+"porciju");
-                    }
-                    if(klintas==2){
-                        atsakymas.setText(String.valueOf(min/sampunass)+"porciju");
-                    }
-                    if(klintas==3){
-                        atsakymas.setText(String.valueOf(min/vanduoo)+"porciju");
-                    }
+                    atsakymas.setText(String.valueOf(String.format("%.2f",min))+"porcijų");
                 }
             }
         });
