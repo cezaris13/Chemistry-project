@@ -12,33 +12,33 @@
         android:id="@+id/ivestisa1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="iveskite avizu kieki"/>
+        android:hint="Aviziniai dribsniai, g"
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisa2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Kepimo milteliai, g"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisa3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Vanduo, ml"
         android:inputType="phone" />
 
     <TextView
         android:id="@+id/textViewa2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttona3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

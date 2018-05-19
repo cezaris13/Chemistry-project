@@ -12,32 +12,33 @@
         android:id="@+id/ivestisb1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Ciberžolė, arbat. šaukšteliai"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisb2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Kokosų aliejus, atbat. šaukšteliai"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisb3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Eterinis aliejus, ml"
         android:inputType="phone" />
 
     <TextView
         android:id="@+id/textViewb2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonb3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

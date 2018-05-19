@@ -12,18 +12,21 @@
         android:id="@+id/ivestisl1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Aliejus, g"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Bičių vaškas, g"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Eterinis aliejus, lašai"
         android:inputType="phone" />
 
 
@@ -31,24 +34,26 @@
         android:id="@+id/ivestisl4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Alavijas, lašai"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisl5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Vitaminas E, tabletės"
         android:inputType="phone" />
+
     <TextView
         android:id="@+id/textViewl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/buttonl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

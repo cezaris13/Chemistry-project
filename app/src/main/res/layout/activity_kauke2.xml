@@ -12,32 +12,33 @@
         android:id="@+id/ivestisk1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Mielės, g"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisk2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Actas, lašai"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisk3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Vanduo, šaukšteliai"
         android:inputType="phone" />
 
     <TextView
         android:id="@+id/textViewk2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonk3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

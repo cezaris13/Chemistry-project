@@ -12,25 +12,28 @@
         android:id="@+id/ivestis1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:hint="Žėlės kiekis, ml"/>
 
     <EditText
         android:id="@+id/ivestis2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:hint="Šampūno kiekis, ml"/>
 
     <EditText
         android:id="@+id/ivestis3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:hint="Želatinos kiekis, g"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+
         android:textSize="20dp"
         android:textStyle="bold"
         />
@@ -39,5 +42,5 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>

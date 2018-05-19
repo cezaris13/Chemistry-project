@@ -12,32 +12,33 @@
         android:id="@+id/ivestisu1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Miltai, g"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisu2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Vanduo, ml"
         android:inputType="phone" />
 
     <EditText
         android:id="@+id/ivestisu3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Druska, g"
         android:inputType="phone" />
 
     <TextView
         android:id="@+id/textViewu2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonu3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="skaiciuoti" />
+        android:text="Skaičiuoti" />
 </LinearLayout>
