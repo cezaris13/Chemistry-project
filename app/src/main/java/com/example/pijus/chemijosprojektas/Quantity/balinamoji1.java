@@ -1,4 +1,4 @@
-package com.example.pijus.chemijosprojektas;
+package com.example.pijus.chemijosprojektas.Quantity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pijus.chemijosprojektas.R;
 
 public class balinamoji1 extends AppCompatActivity {
     Button skaiciuotibb;
@@ -31,14 +33,15 @@ public class balinamoji1 extends AppCompatActivity {
         skaiciuotibb.setOnClickListener(v -> {//to do: patikrinti ar yra tuscia, ar nepakites tekstas ir paspaudus kad isnyktu tekstas
             if (ivestisbb.getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Prašome įvesti kiekį", Toast.LENGTH_SHORT).show();
-            } else {
-                int data = Integer.decode(ivestisbb.getText().toString());
-                rezultatasbb.setText(data * ciber + " arbatinių šaukštelių ciberžolės");
-                rezultatasbb2.setText(data * kokos + " arbatinių šaukštelių kokosų aliejaus");
-                rezultatasbb3.setText(data * eteris + " lašų metų eterinio aliejaus");
-                receptasbalinamoji1.setText("Darbo eiga: \n" + "Viską sumaišyti ir valyti dantis 2-3 kartus per dieną.\n" +
-                        "Kuo dažniau naudosite pastą, tuo greičiau pasieksite efektą.");
+                return;
             }
+
+            int data = Integer.decode(ivestisbb.getText().toString());
+            rezultatasbb.setText(data * ciber + " arbatinių šaukštelių ciberžolės");
+            rezultatasbb2.setText(data * kokos + " arbatinių šaukštelių kokosų aliejaus");
+            rezultatasbb3.setText(data * eteris + " lašų metų eterinio aliejaus");
+            receptasbalinamoji1.setText("Darbo eiga: \n" + "Viską sumaišyti ir valyti dantis 2-3 kartus per dieną.\n" +
+                    "Kuo dažniau naudosite pastą, tuo greičiau pasieksite efektą.");
         });
     }
 }

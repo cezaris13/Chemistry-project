@@ -1,4 +1,4 @@
-package com.example.pijus.chemijosprojektas;
+package com.example.pijus.chemijosprojektas.Quantity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pijus.chemijosprojektas.R;
 
 public class losjonas1 extends AppCompatActivity {
     Button skaiciuotill;

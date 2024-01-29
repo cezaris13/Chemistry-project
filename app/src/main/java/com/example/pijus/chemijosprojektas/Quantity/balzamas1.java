@@ -1,4 +1,4 @@
-package com.example.pijus.chemijosprojektas;
+package com.example.pijus.chemijosprojektas.Quantity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pijus.chemijosprojektas.R;
 
 public class balzamas1 extends AppCompatActivity {
     Button skaiciuotibbal;

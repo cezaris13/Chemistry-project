@@ -1,4 +1,4 @@
-package com.example.pijus.chemijosprojektas;
+package com.example.pijus.chemijosprojektas.PossibleAmount;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,25 +7,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class avizos2 extends AppCompatActivity {
+import com.example.pijus.chemijosprojektas.R;
+
+public class vonioszele2 extends AppCompatActivity {
     Button voniaskaiciuoti;
     EditText pirmasvonia;
     EditText antrasvonia;
     EditText treciasvonia;
     TextView atsakymas;
-    double dribsniai = 6;
-    double miltai = 5;
-    double vendens = 1;
+    double zelle = 12;
+    double vanduoo = 12;
+    double sampunass = 14 / 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avizos2);
-        voniaskaiciuoti = findViewById(R.id.buttona3);
-        pirmasvonia = findViewById(R.id.ivestisa1);
-        antrasvonia = findViewById(R.id.ivestisa2);
-        treciasvonia = findViewById(R.id.ivestisa3);
-        atsakymas = findViewById(R.id.textViewa2);
+        setContentView(R.layout.activity_vonioszele2);
+        voniaskaiciuoti = findViewById(R.id.button3);
+        pirmasvonia = findViewById(R.id.ivestis1);
+        antrasvonia = findViewById(R.id.ivestis2);
+        treciasvonia = findViewById(R.id.ivestis3);
+        atsakymas = findViewById(R.id.textView2);
         voniaskaiciuoti.setOnClickListener(v -> {
             atsakymas.setText("");
             if (pirmasvonia.getText().toString().isEmpty() || antrasvonia.getText().toString().isEmpty() || treciasvonia.getText().toString().isEmpty()) {
@@ -36,14 +38,14 @@ public class avizos2 extends AppCompatActivity {
                 double vanduo3 = Double.parseDouble(treciasvonia.getText().toString());
                 double min = 100000;
 
-                if (min > vanduo1 / dribsniai) {
-                    min = vanduo1 / dribsniai;
+                if (min > vanduo1 / zelle) {
+                    min = vanduo1 / zelle;
                 }
-                if (min > vanduo2 / miltai) {
-                    min = vanduo2 / miltai;
+                if (min > vanduo2 / sampunass) {
+                    min = vanduo2 / sampunass;
                 }
-                if (min > vanduo3 / vendens) {
-                    min = vanduo3 / vendens;
+                if (min > vanduo3 / vanduoo) {
+                    min = vanduo3 / vanduoo;
                 }
                 atsakymas.setText(String.format("%.2f", min) + "porcijų");
             }

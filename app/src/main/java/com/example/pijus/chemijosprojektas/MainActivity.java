@@ -1,17 +1,61 @@
 package com.example.pijus.chemijosprojektas;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.dezodorantas2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.kauke2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.pasta2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.unknown2;
+import com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2;
+import com.example.pijus.chemijosprojektas.Quantity.avizos1;
+import com.example.pijus.chemijosprojektas.Quantity.balinamoji1;
+import com.example.pijus.chemijosprojektas.Quantity.balzamas1;
+import com.example.pijus.chemijosprojektas.Quantity.dezodorantas1;
+import com.example.pijus.chemijosprojektas.Quantity.kauke1;
+import com.example.pijus.chemijosprojektas.Quantity.losjonas1;
+import com.example.pijus.chemijosprojektas.Quantity.pasta1;
+import com.example.pijus.chemijosprojektas.Quantity.unknown1;
+import com.example.pijus.chemijosprojektas.Quantity.vonioszele1;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private String toastMessage = "prasome pasirinkti nors viena recepta";
+    private ArrayList<Class> pages1 = new ArrayList<Class>() {{
+        add(vonioszele1.class);
+        add(kauke1.class);
+        add(unknown1.class);
+        add(balzamas1.class);
+        add(losjonas1.class);
+        add(dezodorantas1.class);
+        add(pasta1.class);
+        add(balinamoji1.class);
+        add(avizos1.class);
+    }};
+
+    ArrayList<Class> pages2 = new ArrayList<Class>() {{
+        add(vonioszele2.class);
+        add(kauke2.class);
+        add(unknown2.class);
+        add(balzamas2.class);
+        add(losjonas2.class);
+        add(dezodorantas2.class);
+        add(pasta2.class);
+        add(balinamoji2.class);
+        add(avizos2.class);
+    }};
+
+    //    ArrayList<RadioButton>
     RadioButton pirmas;
     RadioButton antras;
     RadioButton trecias;
@@ -21,115 +65,42 @@ public class MainActivity extends AppCompatActivity {
     RadioButton septintas;
     RadioButton astuntas;
     RadioButton devintas;
-    int kelintaspage=0;
+    int kelintaspage = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pirmas= findViewById(R.id.RadioButton);
-        antras= findViewById(R.id.RadioButton2);
-        trecias= findViewById(R.id.RadioButton3);
-        ketvirtas= findViewById(R.id.RadioButton4);
-        penktas= findViewById(R.id.RadioButton5);
-        sestas= findViewById(R.id.RadioButton6);
-        septintas= findViewById(R.id.RadioButton7);
-        astuntas= findViewById(R.id.RadioButton8);
-        devintas= findViewById(R.id.RadioButton9);
+        pirmas = findViewById(R.id.RadioButton);
+        antras = findViewById(R.id.RadioButton2);
+        trecias = findViewById(R.id.RadioButton3);
+        ketvirtas = findViewById(R.id.RadioButton4);
+        penktas = findViewById(R.id.RadioButton5);
+        sestas = findViewById(R.id.RadioButton6);
+        septintas = findViewById(R.id.RadioButton7);
+        astuntas = findViewById(R.id.RadioButton8);
+        devintas = findViewById(R.id.RadioButton9);
         Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> {
-            if(kelintaspage==0){
-                Toast.makeText(getApplicationContext(), "prasome pasirinkti nors viena recepta", Toast.LENGTH_LONG).show();
+            if (kelintaspage == 0) {
+                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_LONG).show();
+            } else {
+                startActivity(new Intent(getApplicationContext(), pages1.get(kelintaspage + 1)));
             }
-            if(kelintaspage==1){
-                Intent vonia= new Intent(getApplicationContext(),vonioszele1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==2){
-                Intent vonia= new Intent(getApplicationContext(),kauke1.class);
-                startActivity(vonia);
-
-            }
-            if(kelintaspage==3){
-                Intent vonia= new Intent(getApplicationContext(),unknown1.class);
-                startActivity(vonia);
-
-            }
-            if(kelintaspage==4){
-                Intent vonia= new Intent(getApplicationContext(),balzamas1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==5){
-                Intent vonia= new Intent(getApplicationContext(),losjonas1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==6){
-                Intent vonia= new Intent(getApplicationContext(),dezodorantas1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==7){
-                Intent vonia= new Intent(getApplicationContext(),pasta1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==8){
-                Intent vonia= new Intent(getApplicationContext(),balinamoji1.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==9){
-                Intent vonia= new Intent(getApplicationContext(),avizos1.class);
-                startActivity(vonia);
-            }
-
         });
         Button button2 = findViewById(R.id.button2);
         button2.setOnClickListener(v -> {
-            if(kelintaspage==0){
-                Toast.makeText( getApplicationContext(), "prasome pasirinkti nors viena recepta", Toast.LENGTH_LONG).show();
+            if (kelintaspage == 0) {
+                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_LONG).show();
+            } else {
+                startActivity(new Intent(getApplicationContext(), pages2.get(kelintaspage + 1)));
             }
-            if(kelintaspage==1){
-                Intent vonia= new Intent(getApplicationContext(),vonioszele2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==2){
-                Intent vonia= new Intent(getApplicationContext(),kauke2.class);
-                startActivity(vonia);
-
-            }
-            if(kelintaspage==3){
-                Intent vonia= new Intent(getApplicationContext(),unknown2.class);
-                startActivity(vonia);
-
-            }
-            if(kelintaspage==4){
-                Intent vonia= new Intent(getApplicationContext(),balzamas2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==5){
-                Intent vonia= new Intent(getApplicationContext(),losjonas2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==6){
-                Intent vonia= new Intent(getApplicationContext(),dezodorantas2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==7){
-                Intent vonia= new Intent(getApplicationContext(),pasta2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==8){
-                Intent vonia= new Intent(getApplicationContext(),balinamoji2.class);
-                startActivity(vonia);
-            }
-            if(kelintaspage==9){
-                Intent vonia= new Intent(getApplicationContext(),avizos2.class);
-                startActivity(vonia);
-            }
-
         });
-
     }
+
     //problema: jei useris nuims savo pasirinkima bus blogai
     public void funkcija(View v) {
-        if(pirmas.isChecked()) {
+        if (pirmas.isChecked()) {
             antras.setChecked(false);
             trecias.setChecked(false);
             ketvirtas.setChecked(false);
@@ -140,10 +111,9 @@ public class MainActivity extends AppCompatActivity {
             devintas.setChecked(false);
             kelintaspage = 1;
         }
-
     }
-    public void funkcija2(View v) {
 
+    public void funkcija2(View v) {
         pirmas.setChecked(false);
         trecias.setChecked(false);
         ketvirtas.setChecked(false);
@@ -152,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
         septintas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=2;
-
+        kelintaspage = 2;
     }
+
     public void funkcija3(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -164,9 +134,9 @@ public class MainActivity extends AppCompatActivity {
         septintas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=3;
-
+        kelintaspage = 3;
     }
+
     public void funkcija4(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -176,8 +146,9 @@ public class MainActivity extends AppCompatActivity {
         septintas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=4;
+        kelintaspage = 4;
     }
+
     public void funkcija5(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -187,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
         septintas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=5;
-
+        kelintaspage = 5;
     }
+
     public void funkcija6(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -199,9 +170,9 @@ public class MainActivity extends AppCompatActivity {
         septintas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=6;
-
+        kelintaspage = 6;
     }
+
     public void funkcija7(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -211,9 +182,9 @@ public class MainActivity extends AppCompatActivity {
         sestas.setChecked(false);
         astuntas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=7;
-
+        kelintaspage = 7;
     }
+
     public void funkcija8(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -223,9 +194,9 @@ public class MainActivity extends AppCompatActivity {
         sestas.setChecked(false);
         septintas.setChecked(false);
         devintas.setChecked(false);
-        kelintaspage=8;
-
+        kelintaspage = 8;
     }
+
     public void funkcija9(View v) {
         pirmas.setChecked(false);
         antras.setChecked(false);
@@ -235,6 +206,6 @@ public class MainActivity extends AppCompatActivity {
         sestas.setChecked(false);
         septintas.setChecked(false);
         astuntas.setChecked(false);
-        kelintaspage=9;
+        kelintaspage = 9;
     }
 }
