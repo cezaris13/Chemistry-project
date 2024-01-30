@@ -14,7 +14,7 @@ class pasta1 : BaseQuantityActivity() {
 
         recipe = " Darbo eiga: \n" +
                 "1. Sumašykite miltelius ir druską. \n" +
-                "2. Spilkite glicerolį. \n" +
+                "2. Supilkite glicerolį. \n" +
                 "3. Pilkite iš lėto vandenį, kol gausite tinkamos konsistencijos masę."
 
         ingredientText.add(" g kepimo miltelių")

@@ -12,8 +12,8 @@ class balzamas1 : BaseQuantityActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_balzamas1)
 
-        recipe = "Darbo eiga: \n" + "1.Aliejuje ištirpinti vašką. Neleisti užvirti \n" +
-                "2.Kai aliejus ir vaškas susimaišys, įmaišyti medų.\n" +
+        recipe = "Darbo eiga: \n" + "1. Aliejuje ištirpinti vašką. Neleisti užvirti \n" +
+                "2. Kai aliejus ir vaškas susimaišys, įmaišyti medų.\n" +
                 "3. Įlašinti vitaminą E.\n" +
                 "4. Gautą mišinį palikti atvėsti.\n" +
                 "5. Balzamą laikyti šaldytuve.\n" +

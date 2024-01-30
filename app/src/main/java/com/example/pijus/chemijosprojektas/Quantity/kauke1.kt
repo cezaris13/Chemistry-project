@@ -12,7 +12,7 @@ class kauke1 : BaseQuantityActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kauke1)
         recipe = " Darbo eiga: \n" +
-                "1.Indelyje maišykite mieles, actą ir vandenį, kol pasidarys tiršta masė. Jei reikia, įpilkite dar šiek tiek vandens, kad kaukę būtų galima tepti ant odos. \n" +
+                "1. Indelyje maišykite mieles, actą ir vandenį, kol pasidarys tiršta masė. Jei reikia, įpilkite dar šiek tiek vandens, kad kaukę būtų galima tepti ant odos. \n" +
                 "2.Užtepkite kaukę ant odos. Palaikykite 10 – 15 min. \n" +
                 "3.Nuplaukite šiltu vandeniu ir nusausinkite."
 

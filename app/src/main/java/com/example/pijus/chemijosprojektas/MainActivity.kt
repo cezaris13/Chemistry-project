@@ -28,7 +28,7 @@ import com.example.pijus.chemijosprojektas.Quantity.unknown1
 import com.example.pijus.chemijosprojektas.Quantity.vonioszele1
 
 open class MainActivity : AppCompatActivity() {
-    private val toastMessage = "prasome pasirinkti nors viena recepta"
+    private val toastMessage = "Prašome pasirinkti nors vieną receptą"
     private val pages1: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
         init {
             add(vonioszele1::class.java)

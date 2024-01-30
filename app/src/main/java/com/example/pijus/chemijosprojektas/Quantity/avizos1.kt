@@ -12,11 +12,11 @@ class avizos1 : BaseQuantityActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_avizos1)
         recipe = "Darbo eiga: \n" +
-                "1.Nusivalykite veido odą. \n" +
-                "2.Indelyje sumaišykite dribsnius su soda.\n" +
-                "3.Įpilkite drungno vandens, kad gautumėte pastą. \n" +
-                "4.Švelniai trinkite veidą. \n" +
-                "5.Nusiprauskite ir nusausinkite."
+                "1. Nusivalykite veido odą. \n" +
+                "2. Indelyje sumaišykite dribsnius su soda.\n" +
+                "3. Įpilkite drungno vandens, kad gautumėte pastą. \n" +
+                "4. Švelniai trinkite veidą. \n" +
+                "5. Nusiprauskite ir nusausinkite."
 
         ingredientText.add(" g avižinių dribsnių")
         ingredientText.add(" g kepimo miltelių")

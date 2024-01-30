@@ -16,7 +16,7 @@ class losjonas1 : BaseQuantityActivity() {
 
         recipe = "Darbo eiga: \n" +
                 "1. Aliejuje ištirpinti vašką. Neleisti užvirti.\n" +
-                "2.  Į šia masę pilti vitaminą E, eterinį aliejų ir alaviją. \n" +
+                "2. Į šia masę pilti vitaminą E, eterinį aliejų ir alaviją. \n" +
                 "3. Visą masę gerai išmaišyti. \n" +
                 "4. Tepkite ant odos."
 
