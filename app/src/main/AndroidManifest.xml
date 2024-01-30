@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pijus.chemijosprojektas">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -9,7 +8,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.example.pijus.chemijosprojektas.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,24 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Quantity.vonioszele1" />
-        <activity android:name=".PossibleAmount.vonioszele2" />
-        <activity android:name=".Quantity.kauke1" />
-        <activity android:name=".PossibleAmount.kauke2" />
-        <activity android:name=".Quantity.unknown1" />
-        <activity android:name=".PossibleAmount.unknown2" />
-        <activity android:name=".Quantity.balzamas1" />
-        <activity android:name=".PossibleAmount.balzamas2" />
-        <activity android:name=".Quantity.losjonas1" />
-        <activity android:name=".PossibleAmount.losjonas2" />
-        <activity android:name=".Quantity.dezodorantas1" />
-        <activity android:name=".PossibleAmount.dezodorantas2" />
-        <activity android:name=".Quantity.pasta1" />
-        <activity android:name=".PossibleAmount.pasta2" />
-        <activity android:name=".Quantity.balinamoji1" />
-        <activity android:name=".PossibleAmount.balinamoji2" />
-        <activity android:name=".Quantity.avizos1" />
-        <activity android:name=".PossibleAmount.avizos2"/>
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.vonioszele1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.kauke1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.kauke2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.unknown1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.unknown2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.balzamas1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.losjonas1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.dezodorantas1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.dezodorantas2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.pasta1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.pasta2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.balinamoji1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2" />
+        <activity android:name="com.example.pijus.chemijosprojektas.Quantity.avizos1" />
+        <activity android:name="com.example.pijus.chemijosprojektas.PossibleAmount.avizos2"/>
     </application>
 
 </manifest>

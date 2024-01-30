@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 open class BaseCalculatePortionsActivity : AppCompatActivity() {
-    var toastMessage = "Prašome užpildyti visus langelius"
+    private var toastMessage = "Prašome užpildyti visus langelius"
     var editTexts: ArrayList<EditText> = ArrayList()
     var calculateButton: Button? = null
     var answer: TextView? = null

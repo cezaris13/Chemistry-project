@@ -4,12 +4,12 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.1.1'
     }
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.0.0-Beta3'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.22'
 }
 
 allprojects {

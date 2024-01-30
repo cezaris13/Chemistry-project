@@ -27,7 +27,7 @@ import com.example.pijus.chemijosprojektas.Quantity.pasta1
 import com.example.pijus.chemijosprojektas.Quantity.unknown1
 import com.example.pijus.chemijosprojektas.Quantity.vonioszele1
 
-open class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private val toastMessage = "Prašome pasirinkti nors vieną receptą"
     private val pages1: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
         init {
@@ -65,7 +65,7 @@ open class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        radioGroup = findViewById(R.id.radioGroup)
+//        radioGroup = findViewById(R.id.radioGroup)
         radioButtons.add(findViewById(R.id.RadioButton))
         radioButtons.add(findViewById(R.id.RadioButton2))
         radioButtons.add(findViewById(R.id.RadioButton3))
