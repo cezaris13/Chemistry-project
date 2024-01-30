@@ -21,7 +21,7 @@ open class BaseCalculatePortionsActivity : AppCompatActivity() {
             }
         }
         var min = 100000.0
-        for (i in editTexts.indices) {
+        editTexts.indices.forEach { i ->
             val value: Double = editTexts[i].text.toString().toDouble()
             if (min > value / ingredients[i]) min = value / ingredients[i]
         }

@@ -1,7 +1,6 @@
 package com.example.pijus.chemijosprojektas.PossibleAmount
 
 import android.os.Bundle
-import android.view.View
 import com.example.pijus.chemijosprojektas.R
 
 class balzamas2 : BaseCalculatePortionsActivity() {
@@ -22,6 +21,6 @@ class balzamas2 : BaseCalculatePortionsActivity() {
         ingredients.add(medus)
         ingredients.add(vandekas)
         answer = findViewById(R.id.textViewba2)
-        calculateButton!!.setOnClickListener { v: View? -> calculatePortion() }
+        calculateButton!!.setOnClickListener { calculatePortion() }
     }
 }
