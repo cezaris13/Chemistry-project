@@ -15,17 +15,6 @@ open class BaseQuantityActivity : AppCompatActivity() {
     var calculateResults: Button? = null
     var input: EditText? = null
     var recipeView: TextView? = null
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_balinamoji1)
-//        calculateResults = findViewById(R.id.skaiciuotib)
-//        input = findViewById(R.id.ivestisb)
-//        results.add(findViewById(R.id.rezultatasb))
-//        results.add(findViewById(R.id.rezultatasb2))
-//        results.add(findViewById(R.id.rezultatasb3))
-//        recipeView = findViewById(R.id.receptasbalinamoji)
-//        calculateResults!!.setOnClickListener { calculateButton() }
-//    }
 
     fun calculateButton() {
         if (input?.text.toString().isEmpty()) {

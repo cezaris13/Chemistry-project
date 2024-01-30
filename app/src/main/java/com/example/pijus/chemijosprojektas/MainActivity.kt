@@ -8,8 +8,24 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pijus.chemijosprojektas.PossibleAmount.*
-import com.example.pijus.chemijosprojektas.Quantity.*
+import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2
+import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2
+import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2
+import com.example.pijus.chemijosprojektas.PossibleAmount.dezodorantas2
+import com.example.pijus.chemijosprojektas.PossibleAmount.kauke2
+import com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2
+import com.example.pijus.chemijosprojektas.PossibleAmount.pasta2
+import com.example.pijus.chemijosprojektas.PossibleAmount.unknown2
+import com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2
+import com.example.pijus.chemijosprojektas.Quantity.avizos1
+import com.example.pijus.chemijosprojektas.Quantity.balinamoji1
+import com.example.pijus.chemijosprojektas.Quantity.balzamas1
+import com.example.pijus.chemijosprojektas.Quantity.dezodorantas1
+import com.example.pijus.chemijosprojektas.Quantity.kauke1
+import com.example.pijus.chemijosprojektas.Quantity.losjonas1
+import com.example.pijus.chemijosprojektas.Quantity.pasta1
+import com.example.pijus.chemijosprojektas.Quantity.unknown1
+import com.example.pijus.chemijosprojektas.Quantity.vonioszele1
 
 open class MainActivity : AppCompatActivity() {
     private val toastMessage = "prasome pasirinkti nors viena recepta"
@@ -41,7 +57,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     //    ArrayList<RadioButton>
-    var radioButtons: ArrayList<RadioButton> = ArrayList<RadioButton>()
+    var radioButtons: ArrayList<RadioButton> = ArrayList()
 
     var radioGroup: RadioGroup? = null
 
