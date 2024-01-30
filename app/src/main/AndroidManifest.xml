@@ -9,31 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".vonioszele1" />
-        <activity android:name=".vonioszele2" />
-        <activity android:name=".kauke1" />
-        <activity android:name=".kauke2" />
-        <activity android:name=".unknown1" />
-        <activity android:name=".unknown2" />
-        <activity android:name=".balzamas1" />
-        <activity android:name=".balzamas2" />
-        <activity android:name=".losjonas1" />
-        <activity android:name=".losjonas2" />
-        <activity android:name=".dezodorantas1" />
-        <activity android:name=".dezodorantas2" />
-        <activity android:name=".pasta1" />
-        <activity android:name=".pasta2" />
-        <activity android:name=".balinamoji1" />
-        <activity android:name=".balinamoji2" />
-        <activity android:name=".avizos1" />
-        <activity android:name=".avizos2"></activity>
+        <activity android:name=".Quantity.vonioszele1" />
+        <activity android:name=".PossibleAmount.vonioszele2" />
+        <activity android:name=".Quantity.kauke1" />
+        <activity android:name=".PossibleAmount.kauke2" />
+        <activity android:name=".Quantity.unknown1" />
+        <activity android:name=".PossibleAmount.unknown2" />
+        <activity android:name=".Quantity.balzamas1" />
+        <activity android:name=".PossibleAmount.balzamas2" />
+        <activity android:name=".Quantity.losjonas1" />
+        <activity android:name=".PossibleAmount.losjonas2" />
+        <activity android:name=".Quantity.dezodorantas1" />
+        <activity android:name=".PossibleAmount.dezodorantas2" />
+        <activity android:name=".Quantity.pasta1" />
+        <activity android:name=".PossibleAmount.pasta2" />
+        <activity android:name=".Quantity.balinamoji1" />
+        <activity android:name=".PossibleAmount.balinamoji2" />
+        <activity android:name=".Quantity.avizos1" />
+        <activity android:name=".PossibleAmount.avizos2"/>
     </application>
 
 </manifest>
