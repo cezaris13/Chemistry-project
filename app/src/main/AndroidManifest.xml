@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +34,7 @@
         <activity android:name=".Quantity.balinamoji1" />
         <activity android:name=".PossibleAmount.balinamoji2" />
         <activity android:name=".Quantity.avizos1" />
-        <activity android:name=".PossibleAmount.avizos2"></activity>
+        <activity android:name=".PossibleAmount.avizos2"/>
     </application>
 
 </manifest>
