@@ -7,7 +7,11 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2
 import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2
 import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2
@@ -79,6 +83,21 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener { openScreen(pages1) }
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener { openScreen(pages2) }
+
+        val button3: Button = findViewById(R.id.button3)
+        button3.setOnClickListener { openButton3() }
+    }
+
+    private fun openButton3(){
+        setContent {
+            val recipeData = RecipeData(List(2) { 1 }, List(2) { "a" }, "testas", "receptas")
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "exampleComposeView") {
+                composable("exampleComposeView") {
+                    CalculateQuantities(recipeData)
+                }
+            }
+        }
     }
 
     private fun openScreen(pagesList: ArrayList<Class<*>?>) {
