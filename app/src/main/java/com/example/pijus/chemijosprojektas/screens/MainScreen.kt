@@ -68,11 +68,7 @@ fun MainScreen(
         Button(
             onClick = {
                 val jsonRecipe = Json.encodeToString(recipeData[selectedOptionIndex])
-                navController.currentBackStackEntry?.savedStateHandle?.set(
-                    "recipe",
-                    jsonRecipe
-                )
-                navController.navigate("quantitiesScreen")
+                navController.navigate("quantitiesScreen/$jsonRecipe")
             },
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -81,11 +77,7 @@ fun MainScreen(
         Button(
             onClick = {
                 val jsonRecipe = Json.encodeToString(recipeData[selectedOptionIndex])
-                navController.currentBackStackEntry?.savedStateHandle?.set(
-                    "recipe",
-                    jsonRecipe
-                )
-                navController.navigate("amountScreen")
+                navController.navigate("amountScreen/$jsonRecipe")
             },
             modifier = Modifier.fillMaxWidth()
         ) {

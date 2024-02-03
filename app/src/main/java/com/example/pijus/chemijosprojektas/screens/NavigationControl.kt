@@ -10,9 +10,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pijus.chemijosprojektas.data.RecipeData
-import com.example.pijus.chemijosprojektas.screens.CalculateAmount
-import com.example.pijus.chemijosprojektas.screens.CalculateQuantities
-import com.example.pijus.chemijosprojektas.screens.MainScreen
 import kotlinx.serialization.json.Json
 
 @Composable
@@ -33,8 +30,8 @@ fun NavigationControl(inputs: ArrayList<RecipeData>?) {
             }
         }
 
-        composable("quantitiesScreen") { entry ->
-            val serializedRecipe: String? = entry.savedStateHandle.get<String>("recipe")
+        composable("quantitiesScreen/{recipe}") { entry ->
+            val serializedRecipe: String? = entry.arguments?.getString("recipe")
             if (serializedRecipe != null) {
                 val recipe = Json.decodeFromString<RecipeData>(serializedRecipe)
                 CalculateQuantities(recipe)
@@ -43,8 +40,8 @@ fun NavigationControl(inputs: ArrayList<RecipeData>?) {
             }
         }
 
-        composable("amountScreen") { entry ->
-            val serializedRecipe: String? = entry.savedStateHandle.get<String>("recipe")
+        composable("amountScreen/{recipe}") { entry ->
+            val serializedRecipe: String? = entry.arguments?.getString("recipe")
             if (serializedRecipe != null) {
                 val recipe = Json.decodeFromString<RecipeData>(serializedRecipe)
                 CalculateAmount(recipe)
