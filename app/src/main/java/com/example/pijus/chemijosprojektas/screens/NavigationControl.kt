@@ -1,11 +1,7 @@
 package com.example.pijus.chemijosprojektas.screens
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -18,15 +14,10 @@ fun NavigationControl(inputs: ArrayList<RecipeData>?) {
 
     NavHost(navController = navController, startDestination = "mainScreen") {
         composable("mainScreen") {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
-            ) {
-                if (inputs != null) {
-                    MainScreen(inputs, navController)
-                } else {
-                    Text(text = "Failed to retrieve data")
-                }
+            if (inputs != null) {
+                MainScreen(inputs, navController)
+            } else {
+                Text(text = "Failed to retrieve data")
             }
         }
 

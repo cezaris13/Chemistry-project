@@ -32,27 +32,25 @@ fun MainScreen(
     recipeData: List<RecipeData>,
     navController: NavController
 ) {
-    val radioOptions = recipeData.map { recipe -> recipe.name }
-
-    listOf("Mango", "Banana", "Apple", "Peach")
-    var selectedOption by remember { mutableStateOf(radioOptions[0]) }
+    val recipeNames = recipeData.map { recipe -> recipe.name }
+    var selectedName by remember { mutableStateOf(recipeNames[0]) }
     var selectedOptionIndex by remember { mutableStateOf(0) }
 
     Column(
         modifier = Modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        radioOptions.forEach { fruitName ->
+        recipeNames.forEach { recipeName ->
             Row(verticalAlignment = Alignment.CenterVertically) {
                 RadioButton(
-                    selected = (fruitName == selectedOption),
+                    selected = (recipeName == selectedName),
                     onClick = {
-                        selectedOption = fruitName
-                        selectedOptionIndex = radioOptions.indexOf(fruitName)
+                        selectedName = recipeName
+                        selectedOptionIndex = recipeNames.indexOf(recipeName)
                     }
                 )
                 Text(
-                    text = fruitName,
+                    text = recipeName,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(start = 8.dp)
                 )

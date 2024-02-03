@@ -3,8 +3,12 @@ package com.example.pijus.chemijosprojektas
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.ui.theme.MyApplicationTheme
@@ -39,7 +43,12 @@ class MainActivity : ComponentActivity() {
             val inputs: ArrayList<RecipeData>? by recipeData.observeAsState()
 
             MyApplicationTheme {
-                NavigationControl(inputs)
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    NavigationControl(inputs)
+                }
             }
         }
     }
