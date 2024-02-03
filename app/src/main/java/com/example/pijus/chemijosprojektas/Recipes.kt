@@ -1,6 +1,6 @@
 package com.example.pijus.chemijosprojektas
 
-class CalculateQuantitiesRecipeData {
+class Recipes {
     companion object {
         fun getAllRecipes(): List<RecipeData> {
             val recipes: ArrayList<RecipeData> = ArrayList()
@@ -33,7 +33,12 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(5.0)
             ingredients.add(1.0)
 
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Aviziniai dribsniai, g")
+            ingredientsHintText.add("Kepimo milteliai, g")
+            ingredientsHintText.add("Vanduo, ml")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getBalinamoji(): RecipeData {
@@ -49,7 +54,13 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(1.0)
             ingredients.add(1.0)
             ingredients.add(2.0)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Ciberžolė, arbat. šaukšteliai")
+            ingredientsHintText.add("Kokosų aliejus, atbat. šaukšteliai")
+            ingredientsHintText.add("Eterinis aliejus, ml")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getBalzamas(): RecipeData {
@@ -70,7 +81,14 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(17.0)
             ingredients.add(6.0)
             ingredients.add(0.05)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Alyvuogių aliejus, g")
+            ingredientsHintText.add("Bičių vaškas, g")
+            ingredientsHintText.add("Želatina, g")
+            ingredientsHintText.add("Vanduo, ml")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getDezodorantas(): RecipeData {
@@ -87,7 +105,14 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(2.0)
             ingredients.add(2.0)
             ingredients.add(1.0)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Soda, šaukštai")
+            ingredientsHintText.add("Kokosų aliejus, šaukštai")
+            ingredientsHintText.add("Krakmolas, šaukštai")
+            ingredientsHintText.add("Eterinis aliejus, šaukštai")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getKauke(): RecipeData {
@@ -104,7 +129,13 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(5.5)
             ingredients.add(1.0)
             ingredients.add(1.5)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Mielės, g")
+            ingredientsHintText.add("Vanduo, šaukšteliai")
+            ingredientsHintText.add("Actas, lašai")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getLosjonas(): RecipeData {
@@ -126,7 +157,15 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(1.0)
             ingredients.add(5.0)
             ingredients.add(1.0)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Aliejus, g")
+            ingredientsHintText.add("Bičių vaškas, g")
+            ingredientsHintText.add("Eterinis aliejus, lašai")
+            ingredientsHintText.add("Alavijas, lašai")
+            ingredientsHintText.add("Vitaminas E, tabletės")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getPasta(): RecipeData {
@@ -143,7 +182,13 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(7.5)
             ingredients.add(1.0)
             ingredients.add(1.8)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Kepimo milteliai, g")
+            ingredientsHintText.add("Druska, g")
+            ingredientsHintText.add("Glicerolis, ml")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getUnknown(): RecipeData {
@@ -159,7 +204,13 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(15.0)
             ingredients.add(5.6)
             ingredients.add(8.0)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Miltai, g")
+            ingredientsHintText.add("Vanduo, ml")
+            ingredientsHintText.add("Druska, g")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
 
         private fun getVoniosZele(): RecipeData {
@@ -177,7 +228,13 @@ class CalculateQuantitiesRecipeData {
             ingredients.add(12.0)
             ingredients.add(12.0)
             ingredients.add(1.4)
-            return RecipeData(ingredients, ingredientText, "Įveskite kiekį", recipe)
+
+            val ingredientsHintText = ArrayList<String>()
+            ingredientsHintText.add("Žėlės kiekis, ml")
+            ingredientsHintText.add("Šampūno kiekis, ml")
+            ingredientsHintText.add("Želatinos kiekis, g")
+
+            return RecipeData(ingredients, ingredientText, ingredientsHintText, "Įveskite kiekį", recipe)
         }
     }
 }

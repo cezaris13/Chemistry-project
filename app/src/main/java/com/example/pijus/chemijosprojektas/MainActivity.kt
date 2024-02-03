@@ -1,6 +1,5 @@
 package com.example.pijus.chemijosprojektas
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -12,33 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pijus.chemijosprojektas.CalculateQuantitiesRecipeData.Companion.getAllRecipes
-import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2
-import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2
-import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.dezodorantas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.kauke2
-import com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.pasta2
-import com.example.pijus.chemijosprojektas.PossibleAmount.unknown2
-import com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2
+import com.example.pijus.chemijosprojektas.Recipes.Companion.getAllRecipes
 
 class MainActivity : AppCompatActivity() {
     private val toastMessage = "Prašome pasirinkti nors vieną receptą"
-
-    var pages2: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
-        init {
-            add(vonioszele2::class.java)
-            add(kauke2::class.java)
-            add(unknown2::class.java)
-            add(balzamas2::class.java)
-            add(losjonas2::class.java)
-            add(dezodorantas2::class.java)
-            add(pasta2::class.java)
-            add(balinamoji2::class.java)
-            add(avizos2::class.java)
-        }
-    }
 
     //    ArrayList<RadioButton>
     var radioButtons: ArrayList<RadioButton> = ArrayList()
@@ -59,16 +35,13 @@ class MainActivity : AppCompatActivity() {
         radioButtons.add(findViewById(R.id.RadioButton7))
         radioButtons.add(findViewById(R.id.RadioButton8))
         radioButtons.add(findViewById(R.id.RadioButton9))
-//        val button: Button = findViewById(R.id.button)
-//        button.setOnClickListener { openScreen(pages1) }
-        val button2: Button = findViewById(R.id.button2)
-        button2.setOnClickListener { openScreen(pages2) }
-
         val button: Button = findViewById(R.id.button1)
-        button.setOnClickListener { openButton() }
+        button.setOnClickListener { openPage(calculateAmount = false) }
+        val button2: Button = findViewById(R.id.button2)
+        button2.setOnClickListener { openPage(calculateAmount = true) }
     }
 
-    private fun openButton(){
+    private fun openPage(calculateAmount: Boolean){
         if (kelintaspage == 0) {
             Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
         } else {
@@ -77,18 +50,15 @@ class MainActivity : AppCompatActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "exampleComposeView") {
                     composable("exampleComposeView") {
-                        CalculateQuantities(recipeData)
+                        if (calculateAmount) {
+                            CalculateAmount(recipeData)
+                        }
+                        else {
+                            CalculateQuantities(recipeData)
+                        }
                     }
                 }
             }
-        }
-    }
-
-    private fun openScreen(pagesList: ArrayList<Class<*>?>) {
-        if (kelintaspage == 0) {
-            Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
-        } else {
-            startActivity(Intent(applicationContext, pagesList[kelintaspage + 1]))
         }
     }
 

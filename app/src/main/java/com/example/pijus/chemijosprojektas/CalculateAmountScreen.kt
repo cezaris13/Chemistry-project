@@ -23,31 +23,34 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun CalculateQuantities(recipeData: RecipeData) {
+fun CalculateAmount(recipeData: RecipeData) {
     val toastMessage = "Prašome įvesti kiekį"
     val calculateButtonMessage = "Skaičiuoti"
     val pattern = Regex("^\\d+\$")
     val context = LocalContext.current
 
-    var input by remember { mutableStateOf("") }
-    var recipeText by remember { mutableStateOf("") }
-    val ingredientList = remember { mutableStateListOf<String>() }
+    val inputs = remember { mutableStateListOf<String>() }
+    var result by remember { mutableStateOf("") }
 
-    if (ingredientList.toList().isEmpty())
-        for (i in recipeData.ingredients.indices)
-            ingredientList.add("")
-
-    fun calculatePortion() {
-        if (input.isEmpty()) {
-            Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
-            return
+    if (inputs.toList().isEmpty())
+        for (i in recipeData.ingredients.indices) {
+            inputs.add("")
         }
 
-        for (i: Int in recipeData.ingredients.indices) {
-            ingredientList[i] =
-                "${(input.toInt() * recipeData.ingredients[i])}${recipeData.ingredientsText[i]}"
+    fun calculateAmount() {
+        result = ""
+        for (i in inputs.indices) {
+            if (inputs[i].isEmpty()) {
+                Toast.makeText(context, toastMessage, Toast.LENGTH_LONG).show()
+                return
+            }
         }
-        recipeText = recipeData.recipe
+        var min = 100000.0
+        inputs.indices.forEach { i ->
+            val value: Double = inputs[i].toDouble()
+            if (min > value / recipeData.ingredients[i]) min = value / recipeData.ingredients[i]
+        }
+        result = String.format("%.2f", min) + " porcijų"
     }
 
     Column(
@@ -55,24 +58,23 @@ fun CalculateQuantities(recipeData: RecipeData) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        OutlinedTextField(
-            value = input,
-            onValueChange = {
-                if (it.isEmpty() || it.matches(pattern))
-                    input = it
-            },
-            placeholder = {
-                Text(text = recipeData.placeHolderText)
-            },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.fillMaxWidth()
-        )
         LazyColumn {
-            items(count = ingredientList.size) { index ->
-                Text(text = ingredientList[index], modifier = Modifier.fillMaxWidth())
+            items(count = inputs.size) { index ->
+                OutlinedTextField(
+                    value = inputs[index],
+                    onValueChange = {
+                        if (it.isEmpty() || it.matches(pattern))
+                            inputs[index] = it
+                    },
+                    placeholder = {
+                        Text(text = recipeData.ingredientsHintText[index])
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
-        Text(text = recipeText, modifier = Modifier.fillMaxWidth())
+        Text(text = result, modifier = Modifier.fillMaxWidth())
     }
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -80,7 +82,7 @@ fun CalculateQuantities(recipeData: RecipeData) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { calculatePortion() }, modifier = Modifier.fillMaxWidth()
+            onClick = { calculateAmount() }, modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = calculateButtonMessage)
         }
@@ -89,7 +91,7 @@ fun CalculateQuantities(recipeData: RecipeData) {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFF, group = "UI preview")
 @Composable
-fun PreviewCalculateQuantities() {
+fun PreviewCalculateAmount() {
     val recipeData = RecipeData(List(2) { 1.0 }, List(2) { "a" }, List(2) { "a" }, "testas", "receptas")
-    CalculateQuantities(recipeData)
+    CalculateAmount(recipeData)
 }
