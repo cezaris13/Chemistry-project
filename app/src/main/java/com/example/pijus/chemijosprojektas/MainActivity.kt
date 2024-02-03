@@ -8,20 +8,27 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pijus.chemijosprojektas.Recipes.Companion.getAllRecipes
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.GenericTypeIndicator
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+
 
 class MainActivity : AppCompatActivity() {
     private val toastMessage = "Prašome pasirinkti nors vieną receptą"
 
     //    ArrayList<RadioButton>
-    var radioButtons: ArrayList<RadioButton> = ArrayList()
+    private var radioButtons: ArrayList<RadioButton> = ArrayList()
 
     var radioGroup: RadioGroup? = null
 
-    var kelintaspage = 0
+    private var kelintaspage = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,25 +43,41 @@ class MainActivity : AppCompatActivity() {
         radioButtons.add(findViewById(R.id.RadioButton8))
         radioButtons.add(findViewById(R.id.RadioButton9))
         val button: Button = findViewById(R.id.button1)
-        button.setOnClickListener { openPage(calculateAmount = false) }
+        button.setOnClickListener {
+            lifecycleScope.launch {
+                openPage(calculateAmount = false)
+            }        }
         val button2: Button = findViewById(R.id.button2)
-        button2.setOnClickListener { openPage(calculateAmount = true) }
+        button2.setOnClickListener {
+            lifecycleScope.launch {
+                openPage(calculateAmount = true)
+            }
+        }
     }
 
-    private fun openPage(calculateAmount: Boolean){
+    private suspend fun openPage(calculateAmount: Boolean) {
         if (kelintaspage == 0) {
             Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
         } else {
-            val recipeData = getAllRecipes()[kelintaspage+1]
-            setContent {
-                val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "exampleComposeView") {
-                    composable("exampleComposeView") {
-                        if (calculateAmount) {
-                            CalculateAmount(recipeData)
-                        }
-                        else {
-                            CalculateQuantities(recipeData)
+            val database = Firebase.database
+            val myRef = database.getReference("recipeData")
+            val dataSnapshot: DataSnapshot = myRef.get().await()
+            val t: GenericTypeIndicator<ArrayList<RecipeData>?> = object : GenericTypeIndicator<ArrayList<RecipeData>?>() {}
+            val recipeData: ArrayList<RecipeData>? = dataSnapshot.getValue(t)
+
+            if (recipeData != null) {
+                setContent {
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = "exampleComposeView"
+                    ) {
+                        composable("exampleComposeView") {
+                            if (calculateAmount) {
+                                CalculateAmount(recipeData[kelintaspage + 1])
+                            } else {
+                                CalculateQuantities(recipeData[kelintaspage + 1])
+                            }
                         }
                     }
                 }
