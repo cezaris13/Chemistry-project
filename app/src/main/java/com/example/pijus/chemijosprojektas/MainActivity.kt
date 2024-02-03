@@ -1,60 +1,20 @@
 package com.example.pijus.chemijosprojektas
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2
-import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2
-import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.dezodorantas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.kauke2
-import com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2
-import com.example.pijus.chemijosprojektas.PossibleAmount.pasta2
-import com.example.pijus.chemijosprojektas.PossibleAmount.unknown2
-import com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2
-import com.example.pijus.chemijosprojektas.Quantity.avizos1
-import com.example.pijus.chemijosprojektas.Quantity.balinamoji1
-import com.example.pijus.chemijosprojektas.Quantity.balzamas1
-import com.example.pijus.chemijosprojektas.Quantity.dezodorantas1
-import com.example.pijus.chemijosprojektas.Quantity.kauke1
-import com.example.pijus.chemijosprojektas.Quantity.losjonas1
-import com.example.pijus.chemijosprojektas.Quantity.pasta1
-import com.example.pijus.chemijosprojektas.Quantity.unknown1
-import com.example.pijus.chemijosprojektas.Quantity.vonioszele1
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.pijus.chemijosprojektas.Recipes.Companion.getAllRecipes
 
 class MainActivity : AppCompatActivity() {
     private val toastMessage = "Prašome pasirinkti nors vieną receptą"
-    private val pages1: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
-        init {
-            add(vonioszele1::class.java)
-            add(kauke1::class.java)
-            add(unknown1::class.java)
-            add(balzamas1::class.java)
-            add(losjonas1::class.java)
-            add(dezodorantas1::class.java)
-            add(pasta1::class.java)
-            add(balinamoji1::class.java)
-            add(avizos1::class.java)
-        }
-    }
-    var pages2: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
-        init {
-            add(vonioszele2::class.java)
-            add(kauke2::class.java)
-            add(unknown2::class.java)
-            add(balzamas2::class.java)
-            add(losjonas2::class.java)
-            add(dezodorantas2::class.java)
-            add(pasta2::class.java)
-            add(balinamoji2::class.java)
-            add(avizos2::class.java)
-        }
-    }
 
     //    ArrayList<RadioButton>
     var radioButtons: ArrayList<RadioButton> = ArrayList()
@@ -75,17 +35,30 @@ class MainActivity : AppCompatActivity() {
         radioButtons.add(findViewById(R.id.RadioButton7))
         radioButtons.add(findViewById(R.id.RadioButton8))
         radioButtons.add(findViewById(R.id.RadioButton9))
-        val button: Button = findViewById(R.id.button)
-        button.setOnClickListener { openScreen(pages1) }
+        val button: Button = findViewById(R.id.button1)
+        button.setOnClickListener { openPage(calculateAmount = false) }
         val button2: Button = findViewById(R.id.button2)
-        button2.setOnClickListener { openScreen(pages2) }
+        button2.setOnClickListener { openPage(calculateAmount = true) }
     }
 
-    private fun openScreen(pagesList: ArrayList<Class<*>?>) {
+    private fun openPage(calculateAmount: Boolean){
         if (kelintaspage == 0) {
             Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
         } else {
-            startActivity(Intent(applicationContext, pagesList[kelintaspage + 1]))
+            val recipeData = getAllRecipes()[kelintaspage+1]
+            setContent {
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = "exampleComposeView") {
+                    composable("exampleComposeView") {
+                        if (calculateAmount) {
+                            CalculateAmount(recipeData)
+                        }
+                        else {
+                            CalculateQuantities(recipeData)
+                        }
+                    }
+                }
+            }
         }
     }
 
