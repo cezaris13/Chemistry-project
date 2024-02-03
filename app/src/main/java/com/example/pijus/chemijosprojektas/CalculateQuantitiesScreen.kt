@@ -26,15 +26,17 @@ import androidx.compose.ui.tooling.preview.Preview
 fun CalculateQuantities(recipeData: RecipeData) {
     val toastMessage = "Prašome įvesti kiekį"
     val calculateButtonMessage = "Skaičiuoti"
-    val pattern = remember { Regex("^\\d+\$") }
+    val pattern = Regex("^\\d+\$")
     val context = LocalContext.current
+
     var input by remember { mutableStateOf("") }
     var recipeText by remember { mutableStateOf("") }
     val ingredientList = remember { mutableStateListOf<String>() }
 
-    if (ingredientList.toList().isEmpty()) {
-        for (i in recipeData.ingredients.indices) ingredientList.add("")
-    }
+    if (ingredientList.toList().isEmpty())
+        for (i in recipeData.ingredients.indices)
+            ingredientList.add("")
+
     fun calculatePortion() {
         if (input.isEmpty()) {
             Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
@@ -85,9 +87,9 @@ fun CalculateQuantities(recipeData: RecipeData) {
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0x000000, group = "UI preview")
+@Preview(showBackground = true, backgroundColor = 0xFFFFFF, group = "UI preview")
 @Composable
-fun PreviewFirst() {
-    val recipeData = RecipeData(List(2) { 1 }, List(2) { "a" }, "testas", "receptas")
+fun PreviewCalculateQuantities() {
+    val recipeData = RecipeData(List(2) { 1.0 }, List(2) { "a" }, "testas", "receptas")
     CalculateQuantities(recipeData)
 }

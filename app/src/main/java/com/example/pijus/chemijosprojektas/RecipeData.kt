@@ -1,12 +1,12 @@
 package com.example.pijus.chemijosprojektas
 
 class RecipeData(
-    ingredients: List<Int>,
+    ingredients: List<Double>,
     ingredientsText: List<String>,
     placeHolderText: String,
     recipe: String
 ) {
-    var ingredients: List<Int> = emptyList()
+    var ingredients: List<Double> = emptyList()
     var ingredientsText: List<String> = emptyList()
     var placeHolderText: String = ""
     var recipe: String = ""

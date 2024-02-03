@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.pijus.chemijosprojektas.CalculateQuantitiesRecipeData.Companion.getAllRecipes
 import com.example.pijus.chemijosprojektas.PossibleAmount.avizos2
 import com.example.pijus.chemijosprojektas.PossibleAmount.balinamoji2
 import com.example.pijus.chemijosprojektas.PossibleAmount.balzamas2
@@ -21,31 +22,10 @@ import com.example.pijus.chemijosprojektas.PossibleAmount.losjonas2
 import com.example.pijus.chemijosprojektas.PossibleAmount.pasta2
 import com.example.pijus.chemijosprojektas.PossibleAmount.unknown2
 import com.example.pijus.chemijosprojektas.PossibleAmount.vonioszele2
-import com.example.pijus.chemijosprojektas.Quantity.avizos1
-import com.example.pijus.chemijosprojektas.Quantity.balinamoji1
-import com.example.pijus.chemijosprojektas.Quantity.balzamas1
-import com.example.pijus.chemijosprojektas.Quantity.dezodorantas1
-import com.example.pijus.chemijosprojektas.Quantity.kauke1
-import com.example.pijus.chemijosprojektas.Quantity.losjonas1
-import com.example.pijus.chemijosprojektas.Quantity.pasta1
-import com.example.pijus.chemijosprojektas.Quantity.unknown1
-import com.example.pijus.chemijosprojektas.Quantity.vonioszele1
 
 class MainActivity : AppCompatActivity() {
     private val toastMessage = "Prašome pasirinkti nors vieną receptą"
-    private val pages1: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
-        init {
-            add(vonioszele1::class.java)
-            add(kauke1::class.java)
-            add(unknown1::class.java)
-            add(balzamas1::class.java)
-            add(losjonas1::class.java)
-            add(dezodorantas1::class.java)
-            add(pasta1::class.java)
-            add(balinamoji1::class.java)
-            add(avizos1::class.java)
-        }
-    }
+
     var pages2: ArrayList<Class<*>?> = object : ArrayList<Class<*>?>() {
         init {
             add(vonioszele2::class.java)
@@ -79,22 +59,26 @@ class MainActivity : AppCompatActivity() {
         radioButtons.add(findViewById(R.id.RadioButton7))
         radioButtons.add(findViewById(R.id.RadioButton8))
         radioButtons.add(findViewById(R.id.RadioButton9))
-        val button: Button = findViewById(R.id.button)
-        button.setOnClickListener { openScreen(pages1) }
+//        val button: Button = findViewById(R.id.button)
+//        button.setOnClickListener { openScreen(pages1) }
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener { openScreen(pages2) }
 
-        val button3: Button = findViewById(R.id.button3)
-        button3.setOnClickListener { openButton3() }
+        val button: Button = findViewById(R.id.button1)
+        button.setOnClickListener { openButton() }
     }
 
-    private fun openButton3(){
-        setContent {
-            val recipeData = RecipeData(List(2) { 1 }, List(2) { "a" }, "testas", "receptas")
-            val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "exampleComposeView") {
-                composable("exampleComposeView") {
-                    CalculateQuantities(recipeData)
+    private fun openButton(){
+        if (kelintaspage == 0) {
+            Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
+        } else {
+            val recipeData = getAllRecipes()[kelintaspage+1]
+            setContent {
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = "exampleComposeView") {
+                    composable("exampleComposeView") {
+                        CalculateQuantities(recipeData)
+                    }
                 }
             }
         }
