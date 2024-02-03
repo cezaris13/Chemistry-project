@@ -1,4 +1,4 @@
-package com.example.pijus.chemijosprojektas
+package com.example.pijus.chemijosprojektas.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -21,36 +21,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.pijus.chemijosprojektas.data.RecipeData
 
 @Composable
-fun CalculateAmount(recipeData: RecipeData) {
+fun CalculateQuantities(recipeData: RecipeData) {
     val toastMessage = "Prašome įvesti kiekį"
     val calculateButtonMessage = "Skaičiuoti"
     val pattern = Regex("^\\d+\$")
     val context = LocalContext.current
 
-    val inputs = remember { mutableStateListOf<String>() }
-    var result by remember { mutableStateOf("") }
+    var input by remember { mutableStateOf("") }
+    var recipeText by remember { mutableStateOf("") }
+    val ingredientList = remember { mutableStateListOf<String>() }
 
-    if (inputs.toList().isEmpty())
-        for (i in recipeData.ingredients.indices) {
-            inputs.add("")
+    if (ingredientList.toList().isEmpty())
+        for (i in recipeData.ingredients.indices)
+            ingredientList.add("")
+
+    fun calculatePortion() {
+        if (input.isEmpty()) {
+            Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
+            return
         }
 
-    fun calculateAmount() {
-        result = ""
-        for (i in inputs.indices) {
-            if (inputs[i].isEmpty()) {
-                Toast.makeText(context, toastMessage, Toast.LENGTH_LONG).show()
-                return
-            }
+        for (i: Int in recipeData.ingredients.indices) {
+            ingredientList[i] =
+                "${(input.toInt() * recipeData.ingredients[i])}${recipeData.ingredientsText[i]}"
         }
-        var min = 100000.0
-        inputs.indices.forEach { i ->
-            val value: Double = inputs[i].toDouble()
-            if (min > value / recipeData.ingredients[i]) min = value / recipeData.ingredients[i]
-        }
-        result = String.format("%.2f", min) + " porcijų"
+        recipeText = recipeData.recipe
     }
 
     Column(
@@ -58,23 +56,24 @@ fun CalculateAmount(recipeData: RecipeData) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        OutlinedTextField(
+            value = input,
+            onValueChange = {
+                if (it.isEmpty() || it.matches(pattern))
+                    input = it
+            },
+            placeholder = {
+                Text(text = recipeData.placeHolderText)
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
         LazyColumn {
-            items(count = inputs.size) { index ->
-                OutlinedTextField(
-                    value = inputs[index],
-                    onValueChange = {
-                        if (it.isEmpty() || it.matches(pattern))
-                            inputs[index] = it
-                    },
-                    placeholder = {
-                        Text(text = recipeData.ingredientsHintText[index])
-                    },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                    modifier = Modifier.fillMaxWidth()
-                )
+            items(count = ingredientList.size) { index ->
+                Text(text = ingredientList[index], modifier = Modifier.fillMaxWidth())
             }
         }
-        Text(text = result, modifier = Modifier.fillMaxWidth())
+        Text(text = recipeText, modifier = Modifier.fillMaxWidth())
     }
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -82,7 +81,7 @@ fun CalculateAmount(recipeData: RecipeData) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { calculateAmount() }, modifier = Modifier.fillMaxWidth()
+            onClick = { calculatePortion() }, modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = calculateButtonMessage)
         }
@@ -91,7 +90,8 @@ fun CalculateAmount(recipeData: RecipeData) {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFF, group = "UI preview")
 @Composable
-fun PreviewCalculateAmount() {
-    val recipeData = RecipeData(List(2) { 1.0 }, List(2) { "a" }, List(2) { "a" }, "testas", "receptas")
-    CalculateAmount(recipeData)
+fun PreviewCalculateQuantities() {
+    val recipeData =
+        RecipeData("", List(2) { 1.0 }, List(2) { "a" }, List(2) { "a" }, "testas", "receptas")
+    CalculateQuantities(recipeData)
 }
