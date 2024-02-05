@@ -21,8 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.pijus.chemijosprojektas.data.RecipeData
+import com.example.pijus.chemijosprojektas.theme.MyApplicationTheme
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 

@@ -11,9 +11,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.pijus.chemijosprojektas.data.RecipeData
 import com.example.pijus.chemijosprojektas.screens.NavigationControl
+import com.example.pijus.chemijosprojektas.theme.MyApplicationTheme
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.GenericTypeIndicator
 import com.google.firebase.database.ktx.database
