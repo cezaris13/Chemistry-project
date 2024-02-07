@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376250581608",
+    "project_id": "chemijosprojektas-353df",
+    "storage_bucket": "chemijosprojektas-353df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376250581608:android:7897233c634ee39bf431dd",
+        "android_client_info": {
+          "package_name": "com.example.pijus.chemijosprojektas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcEOAEDOwL_JH9p90XXPx2jof8LYs4RvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
