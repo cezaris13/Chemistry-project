@@ -70,7 +70,7 @@ fun MainScreen(
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Kiek reikės")
+            Text(text = "How much of the ingrediens will be needed")
         }
         Button(
             onClick = {
@@ -79,7 +79,7 @@ fun MainScreen(
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Kiek išeis")
+            Text(text = "How much of a product will be produced")
         }
     }
 }
@@ -91,12 +91,12 @@ fun MainScreenPreview() {
         MainScreen(
             List(2) {
                 RecipeData(
-                    "testas",
+                    "test",
                     List(2) { 1.0 },
                     List(2) { "a" },
                     List(2) { "a" },
-                    "testas",
-                    "receptas"
+                    "test",
+                    "recipe"
                 )
             },
             navController = rememberNavController()

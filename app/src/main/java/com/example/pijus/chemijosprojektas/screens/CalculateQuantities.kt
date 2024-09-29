@@ -25,8 +25,8 @@ import com.example.pijus.chemijosprojektas.data.RecipeData
 
 @Composable
 fun CalculateQuantities(recipeData: RecipeData) {
-    val toastMessage = "Prašome įvesti kiekį"
-    val calculateButtonMessage = "Skaičiuoti"
+    val toastMessage = "Please enter the amount"
+    val calculateButtonMessage = "Calculate"
     val pattern = Regex("^\\d+\$")
     val context = LocalContext.current
 
@@ -92,6 +92,6 @@ fun CalculateQuantities(recipeData: RecipeData) {
 @Composable
 fun PreviewCalculateQuantities() {
     val recipeData =
-        RecipeData("", List(2) { 1.0 }, List(2) { "a" }, List(2) { "a" }, "testas", "receptas")
+        RecipeData("", List(2) { 1.0 }, List(2) { "a" }, List(2) { "a" }, "test", "recipe")
     CalculateQuantities(recipeData)
 }

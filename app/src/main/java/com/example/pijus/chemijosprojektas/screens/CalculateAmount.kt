@@ -25,8 +25,8 @@ import com.example.pijus.chemijosprojektas.data.RecipeData
 
 @Composable
 fun CalculateAmount(recipeData: RecipeData) {
-    val toastMessage = "Prašome įvesti kiekį"
-    val calculateButtonMessage = "Skaičiuoti"
+    val toastMessage = "Please enter the amount"
+    val calculateButtonMessage = "Calculate"
     val pattern = Regex("^\\d+\$")
     val context = LocalContext.current
 
@@ -51,7 +51,7 @@ fun CalculateAmount(recipeData: RecipeData) {
             val value: Double = inputs[i].toDouble()
             if (min > value / recipeData.ingredients[i]) min = value / recipeData.ingredients[i]
         }
-        result = String.format("%.2f", min) + " porcijų"
+        result = String.format("%.2f", min) + " portions"
     }
 
     Column(
